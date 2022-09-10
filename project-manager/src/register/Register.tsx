@@ -2,8 +2,8 @@ import {useState, useEffect} from "react";
 import Navbar from "../navbar/Navbar";
 import "../register/Register.css";
 import SlidingNavbar from "../navbar/SlidingNavbar";
-import { outOfBoundsClick, screenAdjuster} from "../services/NavbarActions";
-import { registerUser } from "../services/Auth";
+import { outOfBoundsClick, screenAdjuster} from "../navbar/NavbarActions";
+import registerUser from "./RegisterRequest";
 
 const Register = () => {
 

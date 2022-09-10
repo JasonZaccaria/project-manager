@@ -1,10 +1,10 @@
 import { useState, useEffect, FormEventHandler, FormEvent } from "react";
 import { convertToObject } from "typescript";
-import { outOfBoundsClick, screenAdjuster} from "../services/NavbarActions";
+import { outOfBoundsClick, screenAdjuster} from "../navbar/NavbarActions";
 import "../login/Login.css";
 import Navbar from "../navbar/Navbar";
 import SlidingNavbar from "../navbar/SlidingNavbar";
-import {loginUser} from "../services/Auth";
+import loginUser from "./LoginRequest";
 
 const Login = () => {
 

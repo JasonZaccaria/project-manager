@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { outOfBoundsClick, screenAdjuster } from "../services/NavbarActions";
+import { outOfBoundsClick, screenAdjuster } from "../navbar/NavbarActions";
 import Navbar from "../navbar/Navbar";
 import SlidingNavbar from "../navbar/SlidingNavbar";
 import { Calendar, momentLocalizer } from "react-big-calendar";

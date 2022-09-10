@@ -1,8 +1,8 @@
 import { FormEvent } from "react";
 
-import { projectResponse } from "../types/ProjectTypes";
+import { projectResponse } from "./ProjectTypes";
 
-import { get } from "./RequestShortcut";
+import { get } from "../requestShortcuts/RequestShortcut";
 
 //the below function sends a fetch request to our server to get our projects
 

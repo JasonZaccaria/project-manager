@@ -1,9 +1,9 @@
 import {useState, useEffect, FormEvent, FormEventHandler} from "react";
 import "../getproject/GetProject.css";
 import Navbar from '../navbar/Navbar';
-import {outOfBoundsClick, screenAdjuster} from "../services/NavbarActions"
+import {outOfBoundsClick, screenAdjuster} from "../navbar/NavbarActions"
 import SlidingNavbar from '../navbar/SlidingNavbar';
-import GetProjects from "../services/ProjectGetter"; //testing import for project getter service
+import GetProjects from "./ProjectGetter"; //testing import for project getter service
 import { useNavigate } from "react-router-dom";
 
 const GetProject = () => {

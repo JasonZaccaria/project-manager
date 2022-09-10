@@ -1,14 +1,11 @@
 import React, {useState, useCallback, useEffect} from 'react';
 import "../homepage/Home.css";
 import Navbar from '../navbar/Navbar';
-import {outOfBoundsClick, screenAdjuster} from "../services/NavbarActions"
+import {outOfBoundsClick, screenAdjuster} from "../navbar/NavbarActions"
 import SlidingNavbar from '../navbar/SlidingNavbar';
-import {calendarDaysInMonth, GetFirstDay} from '../services/CalendarTools';
 
 function Home() {
- 
-    console.log(calendarDaysInMonth());
-    GetFirstDay(calendarDaysInMonth);
+
 
     //below are our states
     let [hamburger, setHamburger] = useState(false);
