@@ -3,13 +3,13 @@ import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
-import Home from './components/Home';
-import CalendarTest from './components/CalendarTest';
-import GetProject from './components/GetProject';
-import Login from './components/Login';
-import Navbar from './components/Navbar';
-import Register from './components/Register';
-import ViewProject from './components/ViewProject';
+import Home from './homepage/Home';
+import CalendarTest from './calendar/CalendarTest';
+import GetProject from './getproject/GetProject';
+import Login from './login/Login';
+import Navbar from './navbar/Navbar';
+import Register from './register/Register';
+import ViewProject from './viewproject/ViewProject';
 
 function App() {
   return (

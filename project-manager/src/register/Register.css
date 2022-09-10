@@ -1,119 +1,59 @@
 .register-content {
-
     width: fit-content;
-
     margin-top: 10vh;
-
     margin-left: auto;
-
     margin-right: auto;
-
 }
-
- 
 
 .register-container {
-
     display: flex;
-
     flex-direction: column;
-
     border: solid 2px black;
-
     border-radius: 10px;
-
 }
-
- 
 
 .register-form {
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-evenly;
-
     width: 20em;
-
     max-width: 70vw;
-
     height: 30em;
-
     min-height: max-content;
-
     text-align: center;
-
 }
-
- 
 
 #email-input-id {
-
     border: none;
-
     border-bottom: solid 2px lightgray;
-
     height: 2em;
-
     margin-left: 5%;
-
     margin-right: 5%;
-
 }
-
- 
 
 #pass-input-id {
-
     border: none;
-
     border-bottom: solid 2px lightgray;
-
     height: 2em;
-
     margin-left: 5%;
-
     margin-right: 5%;
-
 }
-
- 
 
 .register-question {
-
     text-decoration: none;
-
     color: black;
-
 }
 
- 
-
 #register-submit-id {
-
     width: max-content;
-
     padding-left: 10%;
-
     padding-right: 10%;
-
     padding-top: 3%;
-
     padding-bottom: 3%;
-
     height: max-content;
-
     margin-left: auto;
-
     margin-right: auto;
-
     border: none;
-
     border: solid 2px black;
-
     border-radius: 5px;
-
- 
-
 }

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { outOfBoundsClick, screenAdjuster } from "../services/NavbarActions";
-import Navbar from "./Navbar";
-import SlidingNavbar from "./SlidingNavbar";
+import Navbar from "../navbar/Navbar";
+import SlidingNavbar from "../navbar/SlidingNavbar";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import moment from "moment";
-import "../styles/Calendar.css";
+import "../calendar/Calendar.css";
 
 const localizer = momentLocalizer(moment);
 const myEventsList = [{

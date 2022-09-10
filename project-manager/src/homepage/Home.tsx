@@ -1,8 +1,8 @@
 import React, {useState, useCallback, useEffect} from 'react';
-import "../styles/Home.css";
-import Navbar from './Navbar';
+import "../homepage/Home.css";
+import Navbar from '../navbar/Navbar';
 import {outOfBoundsClick, screenAdjuster} from "../services/NavbarActions"
-import SlidingNavbar from './SlidingNavbar';
+import SlidingNavbar from '../navbar/SlidingNavbar';
 import {calendarDaysInMonth, GetFirstDay} from '../services/CalendarTools';
 
 function Home() {
