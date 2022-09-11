@@ -16,17 +16,23 @@ const get = async (url: string) => {
 } 
 
 const getWithJwt = async (url: string) => {
-    const response: Response = await fetch(url, {
-        method: "GET",
-        mode: "cors",
-        credentials: "include",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": window.localStorage.getItem("jwt") as string
-        }
-    })
-    const readResponse = await response.json();
-    return readResponse;
+    try {
+        const response: Response = await fetch(url, {
+            method: "GET",
+            mode: "cors",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": window.localStorage.getItem("jwt") as string
+            }
+        })
+        const readResponse = await response.json();
+        console.log(readResponse);
+        return readResponse;
+    } catch (e) {
+        console.log(e);
+        return { success: false };
+    }
 }
 
 const post = async (url: string, postObject: Object): Promise<Object> => {
@@ -50,7 +56,7 @@ const post = async (url: string, postObject: Object): Promise<Object> => {
 
 const postWithJwt = async (url: string, postObject: Object): Promise<Object> => {
     try {
-        const response = await fetch(url, {
+        const response: Response = await fetch(url, {
             method: "POST",
             mode: "cors",
             credentials: "include",
@@ -60,11 +66,11 @@ const postWithJwt = async (url: string, postObject: Object): Promise<Object> => 
             },
             body: JSON.stringify(postObject)
         })
-        const readResponse = await response.json();
+        const readResponse: any = await response.json();
         return readResponse;
     } catch (e) {
         console.log(e);
-        return { success: true };
+        return { success: false };
     }
 }
 

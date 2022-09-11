@@ -10,6 +10,7 @@ import Login from './login/Login';
 import Navbar from './navbar/Navbar';
 import Register from './register/Register';
 import ViewProject from './viewproject/ViewProject';
+import ProtectLoginRegister from './protectedRoutes/ProtectLoginRegister';
 
 function App() {
   return (
@@ -17,8 +18,10 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route element={<ProtectLoginRegister />}>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+          </Route>
           <Route path="/getproject" element={<GetProject />} />
           <Route path="/projectcreate" element={<Home />} />
           <Route path="/projectpage" element={<Home />} />
