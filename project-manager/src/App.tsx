@@ -11,6 +11,8 @@ import Navbar from './navbar/Navbar';
 import Register from './register/Register';
 import ViewProject from './viewproject/ViewProject';
 import ProtectLoginRegister from './protectedRoutes/ProtectLoginRegister';
+import ProtectProjects from './protectedRoutes/ProtectProjects';
+import ProjectCreate from './projectCreate/ProjectCreate';
 
 function App() {
   return (
@@ -22,11 +24,12 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
           </Route>
-          <Route path="/getproject" element={<GetProject />} />
-          <Route path="/projectcreate" element={<Home />} />
-          <Route path="/projectpage" element={<Home />} />
-          <Route path="/projectpage/:id" element={<ViewProject />} />
-          <Route path="/calendar" element={<CalendarTest />} />
+          <Route element={<ProtectProjects />}>
+            <Route path="/getproject" element={<GetProject />} />
+            <Route path="/projectcreate" element={<ProjectCreate />} />
+            <Route path="/projectpage/" element={<ViewProject />} />
+            <Route path="/calendar" element={<CalendarTest />} />
+          </Route>
           <Route path="*" element={<Navigate to="/" replace={true}/>} />
         </Routes>
       </Router>

@@ -1,20 +1,35 @@
 import { FormEvent } from "react";
 import { NavigateFunction } from "react-router-dom";
-import { post } from "../requestShortcuts/RequestShortcut";
 import { LoginResponse } from "./LoginResponse";
 
 const loginUser = async (url: string, e:FormEvent, nav: NavigateFunction): Promise<void | Object>  => {
     e.preventDefault();
     const email: string = (document.getElementById("login-email-input-id") as HTMLInputElement).value;
     const password: string = (document.getElementById("login-pass-input-id") as HTMLInputElement).value;
-    const readResponse: LoginResponse = await post(url, {email: email, password: password});
-    if (readResponse.jwt) {
-        console.log(readResponse);
-        window.localStorage.setItem("jwt", readResponse.jwt);
-        return nav("/");
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            mode: "cors",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email: email, password: password })
+        })
+        const readResponse: LoginResponse = await response.json();
+        if (readResponse.jwt) {
+            console.log(readResponse);
+            window.localStorage.setItem("jwt", readResponse.jwt);
+            nav("/");
+        } else {
+            console.log("could not retrieve user")
+            //i could perform other logic down here
+        }
+    } catch (e) {
+        console.log(e);
+        console.log("error coudl not login user");
+        //perform error logic down here
     }
-    console.log(readResponse);
-    return { failure: "could not authentication user" };
 }
 
 export default loginUser;

@@ -1,26 +1,13 @@
 import { useState, useEffect } from "react";
-import { getWithJwt } from "../requestShortcuts/RequestShortcut";
 import { ProtectedResponseType } from "./protectedResponseType";
 import { Navigate, Outlet } from "react-router-dom";
+import verifyLogin from "./VerifyLoginFunc";
 const ProtectLoginRegister = () => {
 
     let [loggedIn, setLoggedIn] = useState(false);
     
     useEffect(() => {
-        const testAuth = async () => {
-            if (window.localStorage.getItem("jwt") != null) {
-                const readResponse: ProtectedResponseType = await getWithJwt("http://localhost:8080/api/testlogin");
-                console.log(readResponse);
-                if (readResponse.success) {
-                    setLoggedIn(true);
-                } else {
-                    setLoggedIn(false);
-                }
-            } else {
-                setLoggedIn(false);
-            }
-        }
-        testAuth();
+        verifyLogin(setLoggedIn);
     })
     if (loggedIn) {
         console.log(loggedIn);

@@ -1,5 +1,5 @@
 interface ProtectedResponseType {
-    success: boolean
+    failure: boolean
 }
 
 export type { ProtectedResponseType }
