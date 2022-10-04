@@ -4,26 +4,25 @@ import { useEffect, useState } from "react";
 import { outOfBoundsClick, screenAdjuster } from "../navbar/NavbarActions";
 import Navbar from "../navbar/Navbar";
 import SlidingNavbar from "../navbar/SlidingNavbar";
- 
+import { getProjectData } from "./GetProjectDataReq";
+import { uploadFile } from "./UploadFile";
+import { UploadNote } from "./note/UploadNote";
+import { UploadDeadlines } from "./deadlines/UploadDeadlines";
+
 const ViewProject = () => {
 
     let [hamburger, setHamburger] = useState(false);
     let [count, setCount] = useState(0);
+    let [updateOnce, setUpdateOnce] = useState();
 
     useEffect(() => {
         screenAdjuster(hamburger, setHamburger);
     });
 
-    //we grab url params below
-    let {id} = useParams();
-    let idToString = JSON.stringify(id);
-    console.log(typeof window.localStorage.getItem("firstproject"));
-    //now we need to check local storage for data and if none then we make get request to server
-    if (JSON.stringify(window.localStorage.getItem(idToString)) !== null) {
-        console.log(JSON.stringify(window.localStorage.getItem(idToString)));
-    } else {
-        console.log("no");
-    }
+    useEffect(() => {
+        getProjectData(); //used to get our notes, deadlines, and files from server
+    }, [updateOnce])
+
     return (
         <div className="viewproject" onClick={() => {outOfBoundsClick(hamburger, setHamburger, count, setCount)}}>
             <SlidingNavbar />
@@ -31,6 +30,19 @@ const ViewProject = () => {
                 <Navbar hamburger={hamburger} setHamburger={setHamburger} count={count} setCount={setCount}/>
             </header>
             <section className="project-content-section">
+                <form className="upload-files-form" onChange={uploadFile}>
+                    <input type={"file"} id="file-input-id" /*onChange={uploadFile}*/></input>
+                </form>
+                <form className="upload-notes-form" onSubmit={UploadNote}>
+                    <input type={"text"} id="note-name-input-id"></input>
+                    <input type={"text"} id="note-input-id"></input>
+                    <button type={"submit"}>submit note</button>
+                </form>
+                <form className="upload-deadlines-form" onSubmit={(e) => UploadDeadlines("http://localhost:8080/api/deadlines/create", e)}>
+                    <input type={"text"} id="deadlines-note-input-id"></input>
+                    <input type={"datetime-local"} id="deadlines-input-id"></input>
+                    <button type={"submit"}>create new deadline</button>
+                </form>
             </section>
         </div>
     );
