@@ -1,0 +1,58 @@
+.viewproject {
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    gap: 1em;
+}
+
+.project-content-top {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.project-content-top-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.project-view-notes {
+    width: 30em;
+    height: 30em;
+    background-color: black;
+}
+
+.project-view-files {
+    width: 30em;
+    height: 30em;
+    background-color: gray;
+}
+
+.project-content-top-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.project-view-deadlines {
+    width: 30em;
+    height: 10em;
+    background-color: brown;
+}
+
+.project-create-deadlines {
+    width: 30em;
+    height: 24.5em;
+    background-color: green;
+}
+
+.project-create-files {
+    width: 30em;
+    height: 24.5em;
+    background-color: orange;
+}
+
+.project-content-bottom {
+
+}

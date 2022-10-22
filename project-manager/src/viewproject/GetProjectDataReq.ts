@@ -19,6 +19,9 @@ const getProjectData = async (): Promise<ProjectData | Object> => {
         })
         const readResponse: ProjectData = await response.json();
         console.log(readResponse);
+        //changes here adding ot localstorage 10/17/2022
+        window.localStorage.setItem("projectData", JSON.stringify(readResponse));
+        //changes end here
         return readResponse;
     } catch (e) {
         console.log(e);

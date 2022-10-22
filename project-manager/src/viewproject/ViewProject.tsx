@@ -29,6 +29,25 @@ const ViewProject = () => {
             <header>
                 <Navbar hamburger={hamburger} setHamburger={setHamburger} count={count} setCount={setCount}/>
             </header>
+            
+            <div className="project-content-top">
+                <div className="project-content-top-left">
+                    <div className="project-view-notes" id="project-view-notes-id"></div>
+                    <div className="project-view-files"></div>
+                </div>
+                <div className="project-content-top-right">
+                    <div className="project-view-deadlines"></div>
+                    <div className="project-create-deadlines"></div>
+                    <div className="project-create-files"></div>
+                </div>
+            </div>
+            <div className="project-content-bottom">
+                <form className="upload-notes-form" action="/" id="upload-notes-form-id">
+                    <input type={"text"} className="upload-notes-title-input"></input>
+                    <textarea className="upload-notes-body"></textarea>
+                </form>
+            </div>
+
             <section className="project-content-section">
                 <form className="upload-files-form" onChange={uploadFile}>
                     <input type={"file"} id="file-input-id" /*onChange={uploadFile}*/></input>
