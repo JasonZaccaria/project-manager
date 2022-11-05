@@ -25,6 +25,8 @@
     align-items: center;
     flex-direction: column;
     overflow: auto;
+    /*pointer-events: none;*/
+    /*pointer-events: all;*/
 }
 
 .project-view-notes-title {
@@ -34,6 +36,46 @@
 .note-items-title {
     color: white;
     margin: .3em;
+    background-color: red;
+    cursor: pointer;
+}
+
+.show-note-container {
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin-left: auto; 
+    margin-right: auto;
+    width: 40em;
+    height: 30em;
+    flex-direction: column;
+    align-items: center;
+    background-color: gray;
+}
+
+.show-note-container-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;    
+    background-color: red;
+}
+
+.show-note-container-title {
+    background-color: yellow;
+    width: 56%;
+    text-align: right;
+}
+
+.show-note-container-close {
+    color: white;
+    font-size:2em;
+    cursor: pointer;
+    background-color: green;
+    width: 10%;
 }
 
 .project-view-files {

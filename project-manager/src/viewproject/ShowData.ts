@@ -2,13 +2,6 @@ import { Notes } from "./note/NotesType";
 import { ProjectData } from "./ProjectData";
 
 const showNotes = async (): Promise<void> => {
-    //we need to grab our our data for notes and display it noscreen
-    //first we need to grab our div container we will be storing these objects insid eof
-    //then we need to populate it with links which will open up a new page just showing our note
-    //or even just a popup that will then allow users to delete that note
-    //easiest option would maybe be to make the stuff just pop up on screen so we lessen the load
-    //of server calls overall
-    //Ok so now i can show the title of all of our notes. Now i just need to mkae it so that when a user decides to update that shit it will update automatically not updates on page
     const viewNotesContainer: HTMLElement = document.getElementById("project-view-notes-id") as HTMLElement;
     const projectData: ProjectData = JSON.parse(window.localStorage.getItem("projectData") as string);
     console.log(projectData);
@@ -20,10 +13,45 @@ const showNotes = async (): Promise<void> => {
         newNote.id = `note ${i}`;
         newNote.innerHTML = notesArray[i].noteName;
         viewNotesContainer.appendChild(newNote);
+        //changes start here to addd a new opening note box to display the note asynchronously on screen!!!
+        newNote.addEventListener("click", () => {
+            
+            const root: HTMLElement = document.getElementById("root") as HTMLElement;
+            const app: HTMLElement = document.getElementById("App-id") as HTMLElement;
+
+            const showNoteElement: HTMLElement = document.createElement("div");
+            const showNoteElementTop: HTMLElement = document.createElement("div");
+            const showNoteElementTitle: HTMLElement = document.createElement("h3");
+            const showNoteElementClose: HTMLElement = document.createElement("h3");
+            const showNoteElementText: HTMLElement = document.createElement("p");
+
+            showNoteElement.className = "show-note-container";
+            showNoteElementTop.className = "show-note-container-top";
+            showNoteElementTitle.innerHTML = notesArray[i].noteName;
+            showNoteElementTitle.className = "show-note-container-title";
+            showNoteElementClose.className = "show-note-container-close";
+            showNoteElementClose.innerHTML = "X";
+            showNoteElementText.innerHTML = notesArray[i].note;
+
+            root.appendChild(showNoteElement);
+            showNoteElement.appendChild(showNoteElementTop);
+            showNoteElementTop.appendChild(showNoteElementTitle);
+            showNoteElementTop.appendChild(showNoteElementClose);
+            showNoteElement.appendChild(showNoteElementText);
+
+            app.style.pointerEvents = "none";
+
+            showNoteElementClose.addEventListener("click", () => {
+                showNoteElement.remove();
+                app.style.pointerEvents = "all";
+            })
+
+        })
+        //changes end here
     }
 }
 
-const showFiles = (): void => {
+const showFiles = async (): Promise<void> => {
 
 }
 //actually we don't need this bottom function for now
@@ -31,4 +59,4 @@ const showDeadlines = (): void => {
 
 }
 
-export { showNotes };
+export { showNotes, showFiles };
