@@ -5,7 +5,7 @@ import { outOfBoundsClick, screenAdjuster } from "../navbar/NavbarActions";
 import Navbar from "../navbar/Navbar";
 import SlidingNavbar from "../navbar/SlidingNavbar";
 import { getProjectData } from "./GetProjectDataReq";
-import { uploadFile } from "./UploadFile";
+import { uploadFile } from "./files/UploadFile";
 import { UploadNote } from "./note/UploadNote";
 import { UploadDeadlines } from "./deadlines/UploadDeadlines";
 import { showNotes } from "./ShowData";
@@ -21,9 +21,12 @@ const ViewProject = () => {
     });
 
     useEffect(() => {
-        getProjectData(); //used to get our notes, deadlines, and files from server
-        showNotes();
-    }, [updateOnce])
+        const udpateData = async () => {
+            await getProjectData();
+            showNotes();
+        }
+        udpateData();
+    }, [updateOnce]);
 
     return (
         <div className="viewproject" onClick={() => {outOfBoundsClick(hamburger, setHamburger, count, setCount)}}>

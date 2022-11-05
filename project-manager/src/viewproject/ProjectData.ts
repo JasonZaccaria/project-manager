@@ -1,5 +1,5 @@
 import { Deadlines } from "./deadlines/DeadlinesType";
-import { Files } from "./FilesType";
+import { Files } from "./files/FilesType";
 import { Notes } from "./note/NotesType";
 
 interface ProjectData {

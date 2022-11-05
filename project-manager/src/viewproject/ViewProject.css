@@ -22,11 +22,18 @@
     height: 30em;
     background-color: black;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
 }
 
 .project-view-notes-title {
     color:white;
+}
+
+.note-items-title {
+    color: white;
+    margin: .3em;
 }
 
 .project-view-files {

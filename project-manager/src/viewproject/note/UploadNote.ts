@@ -1,5 +1,7 @@
 import { FormEvent } from "react"
-import { Notes } from "../../getproject/ProjectTypes";
+import { getProjectData } from "../GetProjectDataReq";
+import { ProjectData } from "../ProjectData";
+import { Notes } from "./NotesType";
 
 const UploadNote = async (e: FormEvent): Promise<void> => {
     e.preventDefault();
@@ -20,6 +22,19 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
 
     const readResponse = await response.json();
     console.log(readResponse);
+
+    const projectData: ProjectData = await getProjectData() as ProjectData;
+    const sizeOfNotes: number = projectData.notes.length -1;
+    const lastNote: Notes = projectData.notes[sizeOfNotes];
+    console.log(projectData);
+    console.log(projectData.notes);
+    console.log(projectData.notes.length);
+    const notesContainer: HTMLElement = document.getElementById("project-view-notes-id") as HTMLElement;
+    const newNoteElement: HTMLElement = document.createElement("div");
+    newNoteElement.id = `note ${sizeOfNotes}`;
+    newNoteElement.className = "note-items-title";
+    newNoteElement.innerHTML = lastNote.noteName;
+    notesContainer.appendChild(newNoteElement);
 }
 
 export { UploadNote };
