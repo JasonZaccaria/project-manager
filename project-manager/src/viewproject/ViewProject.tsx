@@ -8,6 +8,7 @@ import { getProjectData } from "./GetProjectDataReq";
 import { uploadFile } from "./UploadFile";
 import { UploadNote } from "./note/UploadNote";
 import { UploadDeadlines } from "./deadlines/UploadDeadlines";
+import { showNotes } from "./ShowData";
 
 const ViewProject = () => {
 
@@ -21,6 +22,7 @@ const ViewProject = () => {
 
     useEffect(() => {
         getProjectData(); //used to get our notes, deadlines, and files from server
+        showNotes();
     }, [updateOnce])
 
     return (
@@ -32,7 +34,9 @@ const ViewProject = () => {
             
             <div className="project-content-top">
                 <div className="project-content-top-left">
-                    <div className="project-view-notes" id="project-view-notes-id"></div>
+                    <div className="project-view-notes" id="project-view-notes-id">
+                        <h3 className="project-view-notes-title">Notes</h3>
+                    </div>
                     <div className="project-view-files"></div>
                 </div>
                 <div className="project-content-top-right">

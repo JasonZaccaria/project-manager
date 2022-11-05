@@ -8,6 +8,12 @@ const uploadFile = async (e: any) => {
     const file: File = getInput.files?.item(0) as File;
     console.log(file);
     fileData.append("file", file);
+    const searchParams: URLSearchParams = new URLSearchParams(window.location.search);
+    const id: string = searchParams.get("id") as string;
+    const project: string = searchParams.get("project") as string;
+    fileData.append("id", id);
+    fileData.append("project", project);
+    fileData.append("date", new Date().getTime().toString());
     console.log(fileData.getAll("file"));
     const response = await fetch("http://localhost:8080/api/files/create", {
         method: "POST",

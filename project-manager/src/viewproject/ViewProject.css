@@ -21,6 +21,12 @@
     width: 30em;
     height: 30em;
     background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.project-view-notes-title {
+    color:white;
 }
 
 .project-view-files {
