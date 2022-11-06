@@ -4,7 +4,8 @@ interface Files {
     projectName: string,
     fileName: string,
     file: string,
-    fileUploadDate: Date
+    fileUploadDate: Date,
+    fileLocation?: string
 }
 
 export type { Files };

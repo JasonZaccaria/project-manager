@@ -1,3 +1,4 @@
+import { Files } from "./files/FilesType";
 import { Notes } from "./note/NotesType";
 import { ProjectData } from "./ProjectData";
 
@@ -52,11 +53,22 @@ const showNotes = async (): Promise<void> => {
 }
 
 const showFiles = async (): Promise<void> => {
-
+    const viewFileContainer: HTMLElement = document.getElementById("project-view-files-id") as HTMLElement;
+    const projectData: ProjectData = JSON.parse(window.localStorage.getItem("projectData") as string);
+    console.log(projectData);
+    const fileArray: Files[] = projectData.files;
+    for (let i = 0; i < fileArray.length; i++) {
+        const newFile: HTMLAnchorElement = document.createElement("a");
+        newFile.className = "file-items-title";
+        newFile.id = `file ${i}`;
+        newFile.innerHTML = fileArray[i].fileName;
+        newFile.href = fileArray[i].fileLocation as string;//"https://projectmanagerbucket.s3.amazonaws.com/1667652721910-testing"; //change this based on each array aelemnt
+        viewFileContainer.appendChild(newFile);
+    }
 }
 //actually we don't need this bottom function for now
 const showDeadlines = (): void => {
-
+    
 }
 
 export { showNotes, showFiles };

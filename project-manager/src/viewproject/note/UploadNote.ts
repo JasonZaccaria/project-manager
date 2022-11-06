@@ -35,6 +35,44 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
     newNoteElement.className = "note-items-title";
     newNoteElement.innerHTML = lastNote.noteName;
     notesContainer.appendChild(newNoteElement);
+
+    //changes start here!!!
+    newNoteElement.addEventListener("click", () => {
+            
+        const root: HTMLElement = document.getElementById("root") as HTMLElement;
+        const app: HTMLElement = document.getElementById("App-id") as HTMLElement;
+
+        const showNoteElement: HTMLElement = document.createElement("div");
+        const showNoteElementTop: HTMLElement = document.createElement("div");
+        const showNoteElementTitle: HTMLElement = document.createElement("h3");
+        const showNoteElementClose: HTMLElement = document.createElement("h3");
+        const showNoteElementText: HTMLElement = document.createElement("p");
+
+        showNoteElement.className = "show-note-container";
+        showNoteElementTop.className = "show-note-container-top";
+        showNoteElementTitle.innerHTML = lastNote.noteName;//notesArray[i].noteName;
+        showNoteElementTitle.className = "show-note-container-title";
+        showNoteElementClose.className = "show-note-container-close";
+        showNoteElementClose.innerHTML = "X";
+        showNoteElementText.innerHTML = lastNote.note;//notesArray[i].note;
+
+        root.appendChild(showNoteElement);
+        showNoteElement.appendChild(showNoteElementTop);
+        showNoteElementTop.appendChild(showNoteElementTitle);
+        showNoteElementTop.appendChild(showNoteElementClose);
+        showNoteElement.appendChild(showNoteElementText);
+
+        app.style.pointerEvents = "none";
+
+        showNoteElementClose.addEventListener("click", () => {
+            showNoteElement.remove();
+            app.style.pointerEvents = "all";
+        })
+
+    })
+    //changes end here
+
+
 }
 
 export { UploadNote };
