@@ -1,19 +1,9 @@
-interface CalType {
-
-    janOne: number[],
-
-    febOne: number[],
-
-    marOne: number[],
-
-    aprOne: number[],
-
-   
-
-   
-
+interface EventList {
+    start: Date,
+    end: Date,
+    title: string,
 }
 
  
 
-export type { CalType };
+export type { EventList };

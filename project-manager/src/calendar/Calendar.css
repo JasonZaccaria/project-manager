@@ -17,3 +17,7 @@
     outline-color: red;
     outline-style: solid;
 }
+
+.rbc-btn-group:nth-child(3) {
+    display: none;
+}
