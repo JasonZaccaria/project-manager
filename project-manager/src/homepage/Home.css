@@ -1,5 +1,7 @@
 .home {
     background-color: rgb(255, 255, 255);
+    background-image: url("../assets/testimagenine.jpg");
+    background-size:cover;
     display: flex;
     flex-direction: column;
     gap: 3em;
@@ -121,8 +123,6 @@
 }
 
 .bottom {
-    /*background-color:aquamarine;*/
-    /*background-color:lightgreen;*/
-    /*background-color: #fcd0d0*/
-    background-color:rgb(208, 245, 199)
+    /*background-color:rgb(208, 245, 199)*/
+    /*background-color: rgb(29, 29, 29);*/
 }

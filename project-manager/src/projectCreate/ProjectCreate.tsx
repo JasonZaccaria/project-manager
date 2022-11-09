@@ -21,7 +21,7 @@ const ProjectCreate = () => {
                 <Navbar hamburger={hamburger} setHamburger={setHamburger} count={count} setCount={setCount}/>
             </header>
             <section className="projectCreate-section">
-                <form className="projectCreate-form" onSubmit={(e) => ProjectCreator("http://localhost:8080/api/createproject", e)}>
+                <form className="projectCreate-form" /*onSubmit={(e) => ProjectCreator("http://localhost:8080/api/createproject", e)}*/>
                     <input type={"text"} name="projectName" id="project-name-input"></input>
                     <button type="submit">Submit</button>
                 </form>

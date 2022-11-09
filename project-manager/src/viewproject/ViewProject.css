@@ -196,14 +196,18 @@
     flex-direction: column;
     align-items: center;
     background-color: black;
+    justify-content: center;
     
 }
 
 .upload-notes-form {
     display: flex;
     flex-direction: column;
-    width: 40em;
-    height: 20em;
+    /*width: 40em;
+    height: 20em;*/
+    width: 50%;
+    
+
     background-color: red;
     justify-content: space-evenly;
 }
@@ -213,11 +217,14 @@
 }
 
 .upload-notes-title-input {
-    width: 20em;
-
+    /*width: 20em;*/
+    width: 50%;
+    /*width: 30em;
+    height: 2em;*/
 }
 
 .upload-notes-body {
+    /*width: 100%;*/
     width: 100%;
     height: 20em;
     resize: none;
@@ -228,4 +235,11 @@
     height: 3em;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media screen and (max-width: 900px) {
+    .upload-notes-form {
+        /*width: 30em;*/
+        min-width: 10em;
+    }
 }

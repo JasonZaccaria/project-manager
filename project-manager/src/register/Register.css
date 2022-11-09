@@ -1,3 +1,10 @@
+.register {
+    background-image: url("../assets/testimagenine.jpg");
+    background-size:cover;
+    width: 100vw;
+    height: 100vh;
+}
+
 .register-content {
     width: fit-content;
     margin-top: 10vh;
@@ -10,6 +17,9 @@
     flex-direction: column;
     border: solid 2px black;
     border-radius: 10px;
+    /*background-color: rgb(46, 46, 46);*/
+    background-color: rgb(24, 24, 24);
+    /*opacity: .9;*/
 }
 
 .register-form {
@@ -29,6 +39,7 @@
     height: 2em;
     margin-left: 5%;
     margin-right: 5%;
+    background-color: rgb(63, 63, 63);
 }
 
 #pass-input-id {
@@ -37,6 +48,7 @@
     height: 2em;
     margin-left: 5%;
     margin-right: 5%;
+    background-color: rgb(63, 63, 63);
 }
 
 .register-question {

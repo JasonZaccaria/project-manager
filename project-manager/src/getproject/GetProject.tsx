@@ -3,7 +3,7 @@ import "../getproject/GetProject.css";
 import Navbar from '../navbar/Navbar';
 import {outOfBoundsClick, screenAdjuster} from "../navbar/NavbarActions"
 import SlidingNavbar from '../navbar/SlidingNavbar';
-import { GetProjects, projectRender, projectNavigator } from "./GetProjectService"; //testing import for project getter service
+import { GetProjects, projectRender, projectNavigator, createProject } from "./GetProjectService"; //testing import for project getter service
 import { useNavigate } from "react-router-dom";
 
 const GetProject = () => {
@@ -32,8 +32,8 @@ const GetProject = () => {
             </header>
             <section>
                 <h2 className="getproject-title">Get Started And Create a New Project</h2>
-                <form action="/projectcreate" className="getproject-form">
-                    <button type="submit" className="getproject-create">Create Project</button>
+                <form /*action="/projectcreate"*/ className="getproject-form">
+                    <button type="submit" className="getproject-create" onClick={createProject}>Create Project</button>
                 </form>
                 <div className="project-area" id="project-area-id"></div>
             </section>
