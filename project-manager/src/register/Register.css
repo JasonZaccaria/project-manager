@@ -1,5 +1,5 @@
 .register {
-    background-image: url("../assets/testimagenine.jpg");
+    background-image: url("../assets/testimage10.png");
     background-size:cover;
     width: 100vw;
     height: 100vh;
@@ -31,29 +31,37 @@
     height: 30em;
     min-height: max-content;
     text-align: center;
+    color: lightgray;
 }
 
 #email-input-id {
     border: none;
-    border-bottom: solid 2px lightgray;
+    /*border-bottom: solid 2px lightgray;*/
     height: 2em;
     margin-left: 5%;
     margin-right: 5%;
     background-color: rgb(63, 63, 63);
+    color: white;
 }
 
 #pass-input-id {
     border: none;
-    border-bottom: solid 2px lightgray;
+    /*border-bottom: solid 2px lightgray;*/
     height: 2em;
     margin-left: 5%;
     margin-right: 5%;
     background-color: rgb(63, 63, 63);
+    color: white;
+}
+
+.register-link {
+    text-decoration: none;
+    color: lightgray;
 }
 
 .register-question {
     text-decoration: none;
-    color: black;
+    color: lightgray;
 }
 
 #register-submit-id {

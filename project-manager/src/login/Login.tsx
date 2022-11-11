@@ -29,7 +29,7 @@ const Login = () => {
                         <h3 className="login-form-title">Login</h3>
                         <input type="text" id="login-email-input-id" placeholder="Email" ></input>
                         <input type="password" id="login-pass-input-id" placeholder="Password" ></input>
-                        <a href="/">
+                        <a href="/" className="login-link">
                             <p className="login-question">Forgot password or email?</p>
                         </a>
                         <button type="submit" id="login-submit-id">Submit</button>

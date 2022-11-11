@@ -28,8 +28,8 @@ const Register = () => {
                     <form className="register-form" onSubmit={(e) => {registerUser(`http://localhost:8080/api/register`, e, navigate)}}>
                         <h3 className="register-form-title">Register Account</h3>
                         <input type="text" id="email-input-id" placeholder="Email" ></input>
-                        <input type="password" id="pass-input-id" placeholder="Password" ></input>
-                        <a href="/login">
+                        <input type="password" id="pass-input-id" placeholder="Password"></input>
+                        <a href="/login" className='register-link'>
                             <p className="register-question">Already have an account?</p>
                         </a>
                         <button type="submit" id="register-submit-id">Submit</button>

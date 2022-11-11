@@ -13,6 +13,7 @@
  
 .navbar-title {
     font-size: 1.5rem;
+    color:lightgray;
 }
 
 .navbar-links-container {
@@ -28,6 +29,7 @@
     padding-right: 4%;
     text-decoration: none;
     color: black;
+    color:lightgray;
 }
  
 .links:hover {

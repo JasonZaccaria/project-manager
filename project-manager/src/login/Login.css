@@ -1,5 +1,5 @@
 .login {
-    background-image: url("../assets/testimagenine.jpg");
+    background-image: url("../assets/testimage10.png");
     background-size:cover;
     width: 100vw;
     height: 100vh;
@@ -17,7 +17,8 @@
     border: solid 2px black;
     border-radius: 10px;
     /*background-color: rgb(27, 27, 27);*/
-    background-color: white;
+    background-color: rgb(24, 24, 24);
+    color: lightgray;
 }
  
 .login-form {
@@ -29,27 +30,39 @@
     height: 30em;
     min-height: max-content;
     text-align: center;
+    color: lightgray;
 }
 
 #login-email-input-id {
     border: none;
-    border-bottom: solid 2px lightgray;
+    /*border-bottom: solid 2px lightgray;*/
     height: 2em;
     margin-left: 5%;
     margin-right: 5%;
+    background-color: rgb(63, 63, 63);
+    color: white;
+    border-radius: 2px;
 }
 
 #login-pass-input-id {
     border: none;
-    border-bottom: solid 2px lightgray;
+    /*border-bottom: solid 2px lightgray;*/
     height: 2em;
     margin-left: 5%;
     margin-right: 5%;
+    background-color: rgb(63, 63, 63);
+    color: white;
+    border-radius: 2px;
+}
+
+.login-link {
+    text-decoration: none;
+    color: lightgray;
 }
 
 .login-question {
     text-decoration: none;
-    color: black;
+    color: lightgray;
 }
 
 #login-submit-id {
