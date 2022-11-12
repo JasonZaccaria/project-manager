@@ -1,7 +1,12 @@
+.GetProject {
+    background-image: url("../assets/testimage10.png");
+}
+
 .getproject-title {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .getproject-form {
@@ -36,10 +41,19 @@
     height: 15em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
-    background-color: red;
+    /*background-color: red;*/
+    background-color: rgb(24,24,24);
     border-radius: 16px;
+    color: lightgray;
+    overflow-x: auto;
+}
+
+.project-card-top {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(77,77,77);
 }
 
 .project-card-button {
@@ -93,18 +107,21 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 16px;
+    background-color: rgb(19, 19, 19);
+    color: white;
 }
 
 .create-project-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: red;
+    background-color: rgb(77,77,77);
+    margin-bottom: 1em;
 }
 
 .create-project-title {
     text-align: center;
-    background-color: aqua;
+    /*background-color: aqua;*/
     margin-left: 7.6em;
 }
 
@@ -112,7 +129,7 @@
     margin-right: 2em;
     font-weight: 1000;
     font-size: 2em;
-    background-color: yellow;
+    /*background-color: yellow;*/
     cursor: pointer;
 }
 
@@ -127,9 +144,25 @@
     width: 20em;
     height: 2.5em;
     border-radius: 5px;
+    /*background-color: black;*/
+    background-color: rgb(63, 63, 63);
+    color: white;
 }
 
 .create-project-button {
     width: 10em;
     height: 4em;
+}
+
+@media screen and (max-width: 600px) {
+    .project-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .project-cards {
+        max-width: 90%;
+    }
+
 }

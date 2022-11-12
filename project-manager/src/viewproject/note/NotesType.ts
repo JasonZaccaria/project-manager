@@ -4,7 +4,7 @@ interface Notes {
     projectName: string,
     noteName: string,
     note: string,
-    Date: Date
+    date: Date
 }
 
 export type { Notes };

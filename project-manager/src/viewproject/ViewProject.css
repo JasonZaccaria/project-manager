@@ -1,7 +1,9 @@
 .viewproject {
     display: flex;
     flex-direction: column;
-    background-color: yellow;
+    /*background-color: yellow;*/
+    background-image: url("../assets/testimage10.png");
+    background-size: cover;
     gap: 1em;
 }
 
@@ -20,7 +22,8 @@
 .project-view-notes {
     width: 30em;
     height: 30em;
-    background-color: black;
+    /*background-color: black;*/
+    background-color: rgb(24, 24, 24);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -30,20 +33,45 @@
 }
 
 .project-view-notes-title {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: .5em;
+    padding-bottom: .5em;
     color:white;
+    text-align: center;
+    background-color: rgb(77,77,77);
 }
 
 .note-items-title {
     color: white;
     margin: .3em;
-    background-color: red;
+    /*background-color: red;*/
     cursor: pointer;
+    margin-left: 5em;
+}
+
+.new-note-date {
+    margin-right: 5em;
+    color: white;
 }
 
 .file-items-title {
     text-decoration: none;
-    color: black;
+    color: white;
     margin: .3em;
+    margin-left: 4em;
+}
+
+.project-view-files-title {
+    color: white;
+    background-color: rgb(77,77,77);
+    width: 100%;
+    text-align: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .show-note-container {
@@ -59,7 +87,9 @@
     height: 30em;
     flex-direction: column;
     align-items: center;
-    background-color: gray;
+    /*background-color: gray;*/
+    background-color: rgb(24, 24, 24);
+    border-radius: 16px;
 }
 
 .show-note-container-top {
@@ -67,66 +97,117 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;    
-    background-color: red;
+    background-color: rgb(77, 77, 77);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
 .show-note-container-title {
-    background-color: yellow;
+    /*background-color: yellow;*/
     width: 56%;
     text-align: right;
+    color: white;
 }
 
 .show-note-container-close {
     color: white;
     font-size:2em;
     cursor: pointer;
-    background-color: green;
+    /*background-color: green;*/
     width: 10%;
+}
+
+.show-note-container-text{
+    color: white;
+}
+
+.new-note-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /*background-color: red;*/
+}
+
+.new-note-row:hover {
+    background-color: rgb(58, 57, 57);
+    cursor: pointer;
 }
 
 .project-view-files {
     width: 30em;
     height: 30em;
-    background-color: gray;
+    background-color: rgb(24,24,24);
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: auto;
 }
 
+.new-file-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.new-file-container:hover {
+    cursor: pointer;
+    background-color: rgb(58, 57, 57);;
+}
+
+.new-file-date {
+    color: white;
+    margin-right: 5em;
+}
+
 .project-content-top-right {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    background-color: aqua;
     
 }
 
 .project-view-deadlines {
     width: 30em;
     height: 10em;
-    background-color: brown;
+    background-color: rgb(24,24,24);
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
+}
+
+.project-view-deadlines-title {
+    background-color: rgb(77, 77, 77);
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    padding-top: .5em;
+    padding-bottom: .5em;
+
 }
 
 .project-view-deadlines-button {
     width: 10em;
     height: 3em;
-    border-radius: 5px;
-    background-color: green;
+    
 }
 
 .project-create-deadlines {
     width: 30em;
     /*height: 24.5em;*/
     height: 15em;
-    background-color: green;
+    background-color: rgb(24, 24, 24);
+    color: white;
 }
 
 .project-create-new-deadline {
     text-align: center;
+    background-color: rgb(77, 77, 77);
+    margin-top: 0;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
 
 .project-create-deadline-form {
@@ -156,15 +237,20 @@
     height: 10em;
     /*width: 30em;*/
     /*height: 24.5em;*/
-    background-color: orange;
+    background-color: rgb(24, 24, 24);
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 .project-create-files-title {
     text-align: center;
+    color: white;
+    background-color: rgb(77, 77, 77);
+    width: 100%;
+    margin-top: 0;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
 
 .project-create-files-form {
@@ -188,16 +274,22 @@
     justify-content: center;
     width: 10em;
     height: 3em;
-    background-color: red;
+    background-color: white;
 }
 
 .project-content-bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: black;
+    /*background-color: black;*/
     justify-content: center;
-    
+}
+
+.project-content-container {
+    width: 60%;
+    min-width: 30em;
+    background-color: rgb(77, 77, 77);
+    text-align: center;
 }
 
 .upload-notes-form {
@@ -205,11 +297,10 @@
     flex-direction: column;
     /*width: 40em;
     height: 20em;*/
-    width: 50%;
-    
-
-    background-color: red;
+    width: 100%;
+    background-color: rgb(24, 24, 24);
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .upload-notes-title {
@@ -221,13 +312,16 @@
     width: 50%;
     /*width: 30em;
     height: 2em;*/
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .upload-notes-body {
     /*width: 100%;*/
-    width: 100%;
+    width: 90%;
     height: 20em;
     resize: none;
+    margin-bottom: 1em;
 }
 
 .upload-notes-button {
@@ -235,11 +329,74 @@
     height: 3em;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1em;
 }
 
 @media screen and (max-width: 900px) {
     .upload-notes-form {
         /*width: 30em;*/
         min-width: 10em;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .show-note-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .project-view-notes {
+        width: 90vw;
+    }
+
+    .new-note-row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .note-items-title {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .new-note-date {
+       display: none;
+    }
+
+    .project-view-files {
+        width: 90vw;
+    }
+
+    .new-file-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .file-items-title {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .new-file-date {
+        display: none;
+    }
+
+    .project-view-deadlines {
+        width: 90vw;
+    }
+
+    .project-create-deadlines {
+        width: 90vw;
+    }
+
+    .project-create-files {
+        width: 90vw;
+    }
+
+    .project-content-container {
+        width: 90vw;
+        min-width: 0;
     }
 }

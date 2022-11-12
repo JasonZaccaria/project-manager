@@ -21,20 +21,24 @@ const projectRender = async (url: string, getProjectFunc: Function, navigateProj
     const projectArea = document.getElementById("project-area-id");
     for (let i = 0; i < getProjectResponse.projects.length; i++) {
 
-        const projectCard = document.createElement("div");
-        const projectTitle = document.createElement("h3");
-        const projectDate = document.createElement("p")
-        const projectButton = document.createElement("button")
+        const projectCard: HTMLDivElement = document.createElement("div");
+        const projectCardTop: HTMLDivElement = document.createElement("div");
+        const projectTitle: HTMLHeadElement = document.createElement("h3");
+        const projectDate: HTMLParagraphElement = document.createElement("p")
+        const projectButton: HTMLButtonElement = document.createElement("button")
 
         projectCard.className = "project-cards";
         projectCard.id = getProjectResponse.projects[i].id!.toString();
+        projectCardTop.className = "project-card-top";
         projectTitle.innerHTML = getProjectResponse.projects[i].projectName!;
-        projectDate.innerHTML = getProjectResponse.projects[i].creationDate!.toLocaleString();
+        projectTitle.className = "project-card-title";
+        projectDate.innerHTML = getProjectResponse.projects[i].creationDate!.toLocaleString().substring(0,10);
         projectButton.className = "project-card-button";
         projectButton.innerHTML = "open project";
 
         projectArea?.appendChild(projectCard);
-        projectCard.appendChild(projectTitle);
+        projectCard.appendChild(projectCardTop);
+        projectCardTop.appendChild(projectTitle);
         projectCard.appendChild(projectDate);
         projectCard.appendChild(projectButton);
 
@@ -117,21 +121,27 @@ const createProject = (e: FormEvent) => {
             const currentProject: Project = projectArray[projectArrayLength -1];
 
                 const projectCard = document.createElement("div");
+                const projectCardTop = document.createElement("div");
                 const projectTitle = document.createElement("h3");
                 const projectDate = document.createElement("p")
                 const projectButton = document.createElement("button")
 
                 projectCard.className = "project-cards";
                 projectCard.id = currentProject.id!.toString();
+                projectCardTop.className = "project-card-top";
                 projectTitle.innerHTML = currentProject.projectName!;
-                projectDate.innerHTML = currentProject.creationDate!.toLocaleString();
+                projectDate.innerHTML = currentProject.creationDate!.toLocaleString().substring(0,10);
                 projectButton.className = "project-card-button";
                 projectButton.innerHTML = "open project";
 
                 projectArea?.appendChild(projectCard);
-                projectCard.appendChild(projectTitle);
+                projectCard.appendChild(projectCardTop);
+                projectCardTop.appendChild(projectTitle);
                 projectCard.appendChild(projectDate);
                 projectCard.appendChild(projectButton);
+
+                createProjectContainer.remove();
+                app.style.pointerEvents = "all";
 
                 //projectButton.addEventListener("click", () => navigateProjectFunc(projectButton, nav));
                 projectButton.addEventListener("click", () => {

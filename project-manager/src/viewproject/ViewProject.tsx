@@ -70,12 +70,14 @@ const ViewProject = () => {
                 </div>
             </div>
             <div className="project-content-bottom">
-                <h3 className="upload-notes-title">Upload New Note</h3>
-                <form className="upload-notes-form" action="/" id="upload-notes-form-id" onSubmit={UploadNote}>
-                    <input type={"text"} className="upload-notes-title-input"  id="note-name-input-id" placeholder="Note Title"></input>
-                    <textarea className="upload-notes-body" id="note-input-id"></textarea>
-                    <button type={"submit"} className="upload-notes-button">Create Note</button>
-                </form>
+                <div className="project-content-container">
+                    <h3 className="upload-notes-title">Upload New Note</h3>
+                    <form className="upload-notes-form" action="/" id="upload-notes-form-id" onSubmit={UploadNote}>
+                        <input type={"text"} className="upload-notes-title-input"  id="note-name-input-id" placeholder="Note Title"></input>
+                        <textarea className="upload-notes-body" id="note-input-id"></textarea>
+                        <button type={"submit"} className="upload-notes-button">Create Note</button>
+                    </form>
+                </div>
             </div>
         </div>
     );

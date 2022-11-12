@@ -5,7 +5,10 @@ const getProjectData = async (): Promise<ProjectData | Object> => {
     try {
         const params = new URLSearchParams(window.location.search);
         const project = params.get("project");
-        const projectId = params.get("id");
+        const projectId = Number.parseInt(params.get("id") as string);
+        console.log(window.location.search);
+        console.log("project");
+        console.log("id");
     
         const response: Response = await fetch("http://localhost:8080/api/viewproject", {
             method: "POST",

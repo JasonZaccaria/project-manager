@@ -31,13 +31,23 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
     console.log(projectData.notes.length);
     const notesContainer: HTMLElement = document.getElementById("project-view-notes-id") as HTMLElement;
     const newNoteElement: HTMLElement = document.createElement("div");
+    /*changes start here*/
+    const newNotesDataContainer: HTMLElement = document.createElement("div");
+    const newNoteDateElement: HTMLElement = document.createElement("div");
+    /*changed end here*/
     newNoteElement.id = `note ${sizeOfNotes}`;
     newNoteElement.className = "note-items-title";
     newNoteElement.innerHTML = lastNote.noteName;
-    notesContainer.appendChild(newNoteElement);
+    newNoteDateElement.innerHTML = lastNote.date.toLocaleString().substring(0,10);
+    newNotesDataContainer.className = "new-note-row";
+    newNoteDateElement.className = "new-note-date";
+    //notesContainer.appendChild(newNoteElement);
+    notesContainer.appendChild(newNotesDataContainer);
+    newNotesDataContainer.appendChild(newNoteElement);
+    newNotesDataContainer.appendChild(newNoteDateElement);
 
-    //changes start here!!!
-    newNoteElement.addEventListener("click", () => {
+    //changes start here!!! //was newnoteeleement
+    newNotesDataContainer.addEventListener("click", () => {
             
         const root: HTMLElement = document.getElementById("root") as HTMLElement;
         const app: HTMLElement = document.getElementById("App-id") as HTMLElement;

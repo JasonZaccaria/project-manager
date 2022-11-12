@@ -9,13 +9,20 @@ const showNotes = async (): Promise<void> => {
     const notesArray: Notes[] = projectData.notes;
     console.log(notesArray);
     for (let i = 0; i < notesArray.length; i++) {
+        const newNoteRow: HTMLElement = document.createElement("div");
         const newNote: HTMLElement = document.createElement("div");
+        const newNoteDate: HTMLElement = document.createElement("div");
+        newNoteRow.className = "new-note-row";
         newNote.className = "note-items-title";
+        newNoteDate.className = "new-note-date";
         newNote.id = `note ${i}`;
         newNote.innerHTML = notesArray[i].noteName;
-        viewNotesContainer.appendChild(newNote);
+        newNoteDate.innerHTML = notesArray[i].date.toLocaleString().substring(0,10);
+        viewNotesContainer.appendChild(newNoteRow);
+        newNoteRow.appendChild(newNote);
+        newNoteRow.appendChild(newNoteDate);
         //changes start here to addd a new opening note box to display the note asynchronously on screen!!!
-        newNote.addEventListener("click", () => {
+        newNoteRow.addEventListener("click", () => {
             
             const root: HTMLElement = document.getElementById("root") as HTMLElement;
             const app: HTMLElement = document.getElementById("App-id") as HTMLElement;
@@ -31,6 +38,7 @@ const showNotes = async (): Promise<void> => {
             showNoteElementTitle.innerHTML = notesArray[i].noteName;
             showNoteElementTitle.className = "show-note-container-title";
             showNoteElementClose.className = "show-note-container-close";
+            showNoteElementText.className = "show-note-container-text";
             showNoteElementClose.innerHTML = "X";
             showNoteElementText.innerHTML = notesArray[i].note;
 
@@ -58,12 +66,20 @@ const showFiles = async (): Promise<void> => {
     console.log(projectData);
     const fileArray: Files[] = projectData.files;
     for (let i = 0; i < fileArray.length; i++) {
+        const newFileContainer: HTMLDivElement = document.createElement("div");
         const newFile: HTMLAnchorElement = document.createElement("a");
+        const newFileDate: HTMLParagraphElement = document.createElement("p");
+        newFileContainer.className = "new-file-container";
         newFile.className = "file-items-title";
+        newFileDate.className = "new-file-date";
         newFile.id = `file ${i}`;
         newFile.innerHTML = fileArray[i].fileName;
-        newFile.href = fileArray[i].fileLocation as string;//"https://projectmanagerbucket.s3.amazonaws.com/1667652721910-testing"; //change this based on each array aelemnt
-        viewFileContainer.appendChild(newFile);
+        newFile.href = fileArray[i].fileLocation as string;
+        newFileDate.innerHTML = fileArray[i].fileUploadDate.toLocaleString().substring(0,10);
+        //viewFileContainer.appendChild(newFile);
+        viewFileContainer.appendChild(newFileContainer);
+        newFileContainer.appendChild(newFile);
+        newFileContainer.appendChild(newFileDate);
     }
 }
 //actually we don't need this bottom function for now
