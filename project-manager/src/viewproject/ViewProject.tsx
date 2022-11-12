@@ -9,6 +9,7 @@ import { uploadFile } from "./files/UploadFile";
 import { UploadNote } from "./note/UploadNote";
 import { UploadDeadlines } from "./deadlines/UploadDeadlines";
 import { showFiles, showNotes } from "./ShowData";
+import NavbarLoggedIn from "../navbar/NavbarLoggedIn";
 
 const ViewProject = () => {
 
@@ -33,7 +34,7 @@ const ViewProject = () => {
         <div className="viewproject" onClick={() => {outOfBoundsClick(hamburger, setHamburger, count, setCount)}}>
             <SlidingNavbar />
             <header>
-                <Navbar hamburger={hamburger} setHamburger={setHamburger} count={count} setCount={setCount}/>
+                <NavbarLoggedIn hamburger={hamburger} setHamburger={setHamburger} count={count} setCount={setCount}/>
             </header>
             
             <div className="project-content-top">

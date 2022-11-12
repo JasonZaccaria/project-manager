@@ -18,6 +18,8 @@ const verifyLogin = async (setLoggedIn: React.Dispatch<React.SetStateAction<bool
             } else {
                 setLoggedIn(false);
             }
+        } else {
+            setLoggedIn(false);
         }
     } catch (e) {
         setLoggedIn(false);

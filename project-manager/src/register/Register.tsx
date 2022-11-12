@@ -23,6 +23,7 @@ const Register = () => {
             <header>
                 <Navbar hamburger={hamburger} setHamburger={setHamburger} count={count} setCount={setCount} />
             </header>
+            <div className="register-error-box" id="register-error-box-id">Incorrect Email or Password!</div>
             <section className="register-content">
                 <div className="register-container">
                     <form className="register-form" onSubmit={(e) => {registerUser(`http://localhost:8080/api/register`, e, navigate)}}>

@@ -23,6 +23,7 @@ const Login = () => {
             <header>
                 <Navbar hamburger={hamburger} setHamburger={setHamburger} count={count} setCount={setCount} />
             </header>
+            <div className="login-error-box" id="login-error-box-id">Incorrect Email or Password!</div>
             <section className="login-content">
                 <div className="login-container">
                     <form className="login-form" onSubmit={(e) => {loginUser(`http://localhost:8080/api/login`, e, navigate)}} action="/">

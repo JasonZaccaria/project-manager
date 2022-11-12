@@ -22,11 +22,33 @@ const registerUser = async (url: string, e:FormEvent, nav: NavigateFunction): Pr
             nav("/login");
         } else {
             console.log("failure could not register user");
+            const emailInput: HTMLInputElement = document.getElementById("email-input-id") as HTMLInputElement;
+            const passwordInput: HTMLInputElement = document.getElementById("pass-input-id") as HTMLInputElement;
+            const RegisterErrorBox: HTMLDivElement = document.getElementById("register-error-box-id") as HTMLDivElement;
+
+            emailInput.style.outline = "solid 2px red";
+            //emailInput.style.color = "red";
+        
+            passwordInput.style.outline = "solid 2px red";
+            //passwordInput.style.color = "red";
+
+            RegisterErrorBox.classList.add("register-error-box-show");
         }
     } catch (e) {
         console.log(e);
         console.log("could not regsiter user error");
         //perform some other error handling here
+        const emailInput: HTMLInputElement = document.getElementById("email-input-id") as HTMLInputElement;
+        const passwordInput: HTMLInputElement = document.getElementById("pass-input-id") as HTMLInputElement;
+        const RegisterErrorBox: HTMLDivElement = document.getElementById("register-error-box-id") as HTMLDivElement;
+
+        emailInput.style.outline = "solid 2px red";
+        //emailInput.style.color = "red";
+        
+        passwordInput.style.outline = "solid 2px red";
+        //passwordInput.style.color = "red";
+
+        RegisterErrorBox.classList.add("register-error-box-show");
     }
 }
 

@@ -5,6 +5,7 @@ import {outOfBoundsClick, screenAdjuster} from "../navbar/NavbarActions"
 import SlidingNavbar from '../navbar/SlidingNavbar';
 import { GetProjects, projectRender, projectNavigator, createProject } from "./GetProjectService"; //testing import for project getter service
 import { useNavigate } from "react-router-dom";
+import NavbarLoggedIn from "../navbar/NavbarLoggedIn";
 
 const GetProject = () => {
 
@@ -28,7 +29,7 @@ const GetProject = () => {
         <div className="GetProject" onClick={() => {outOfBoundsClick(hamburger, setHamburger, count, setCount)}}>
             <SlidingNavbar />
             <header className="home-header">
-                <Navbar hamburger={hamburger} setHamburger={setHamburger} count={count} setCount={setCount}/>
+                <NavbarLoggedIn hamburger={hamburger} setHamburger={setHamburger} count={count} setCount={setCount}/>
             </header>
             <section>
                 <h2 className="getproject-title">Get Started And Create a New Project</h2>
