@@ -1,3 +1,8 @@
+.calendar {
+    background-color: rgb(24, 24, 24);
+    color: white;
+}
+
 .calendar-container {
     /*display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -20,4 +25,41 @@
 
 .rbc-btn-group:nth-child(3) {
     display: none;
+}
+
+.rbc-off-range-bg {
+    background-color: rgb(77, 77, 77);
+}
+
+.rbc-today {
+    background-color: rgb(77, 77, 77);
+}
+
+.rbc-btn-group {
+    color: white;
+    background-color: rgb(77,77,77);
+}
+
+.rbc-btn-group > button:nth-child(1){
+    color: white;
+}
+
+.rbc-btn-group > button:nth-child(1):hover{
+    color: black;
+}
+
+.rbc-btn-group > button:nth-child(2){
+    color: white;
+}
+
+.rbc-btn-group > button:nth-child(2):hover{
+    color: black;
+}
+
+.rbc-btn-group > button:nth-child(3){
+    color: white;
+}
+
+.rbc-btn-group > button:nth-child(3):hover{
+    color: black;
 }

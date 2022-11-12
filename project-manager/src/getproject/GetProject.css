@@ -109,6 +109,7 @@
     border-radius: 16px;
     background-color: rgb(19, 19, 19);
     color: white;
+    border: solid 2px black;
 }
 
 .create-project-top {
@@ -117,6 +118,8 @@
     justify-content: space-between;
     background-color: rgb(77,77,77);
     margin-bottom: 1em;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
 .create-project-title {
@@ -154,6 +157,12 @@
     height: 4em;
 }
 
+@media screen and (max-width: 959px) {
+    .project-view-deadlines {
+        margin-top: 1em;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .project-area {
         display: flex;
@@ -161,8 +170,29 @@
         justify-content: center;
         align-items: center;
     }
+    
     .project-cards {
         max-width: 90%;
+    }
+
+    .create-project-container {
+        width: 90%;
+    }
+
+    .create-project-top {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .create-project-title {
+        margin-left: 0em;
+    }
+    .create-project-close {
+        margin-right: 0em;
+    }
+
+    .create-project-input {
+        width: 60%;
     }
 
 }

@@ -6,13 +6,13 @@ function SlidingNavbar() {
             <div className="sliding-title">Menu</div>
             <div className="sliding-links">
                 <a href="/login" className="sliding-navbar-links">
-                    <p>Link 1</p>
+                    <p>Login</p>
                 </a>
                 <a href="/register" className="sliding-navbar-links">
-                    <p>Link 2</p>
+                    <p>Register</p>
                 </a>
                 <a href="/getproject" className="sliding-navbar-links">
-                    <p>Link 3</p>
+                    <p>Projects</p>
                 </a>
             </div>
         </div>
