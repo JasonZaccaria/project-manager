@@ -120,7 +120,11 @@
     text-decoration: none;
     color: white;
     margin: .3em;
-    margin-left: 4em;
+    /*margin-left: 4em;*/
+}
+
+.file-items-title:hover {
+    color:black;
 }
 
 .project-view-files-title {
@@ -208,7 +212,8 @@
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+    justify-content: space-evenly;
 }
 
 .new-file-container:hover {
@@ -218,7 +223,16 @@
 
 .new-file-date {
     color: white;
-    margin-right: 5em;
+    /*margin-right: 5em;*/
+}
+
+.new-file-delete {
+    text-decoration: none;
+    border:none;
+    background: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
 }
 
 .project-content-top-right {

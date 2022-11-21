@@ -148,6 +148,7 @@ const showFiles = async (): Promise<void> => {
         const newFileContainer: HTMLDivElement = document.createElement("div");
         const newFile: HTMLAnchorElement = document.createElement("a");
         const newFileDate: HTMLParagraphElement = document.createElement("p");
+        const newFileDelete: HTMLButtonElement = document.createElement("button");
         newFileContainer.className = "new-file-container";
         newFile.className = "file-items-title";
         newFileDate.className = "new-file-date";
@@ -155,10 +156,66 @@ const showFiles = async (): Promise<void> => {
         newFile.innerHTML = fileArray[i].fileName;
         newFile.href = fileArray[i].fileLocation as string;
         newFileDate.innerHTML = fileArray[i].fileUploadDate.toLocaleString().substring(0,10);
+        newFileDelete.innerHTML = "X";
+        newFileDelete.className = "new-file-delete";
         //viewFileContainer.appendChild(newFile);
         viewFileContainer.appendChild(newFileContainer);
         newFileContainer.appendChild(newFile);
         newFileContainer.appendChild(newFileDate);
+        newFileContainer.appendChild(newFileDelete);
+
+        newFileDelete.addEventListener("click", () => {
+            const app: HTMLElement = document.getElementById("App-id") as HTMLElement;
+            const root: HTMLElement = document.getElementById("root") as HTMLElement;
+            const deletePopUp: HTMLDivElement = document.createElement("div");
+            const deleteTitle: HTMLHeadingElement = document.createElement("h3");
+            const deleteOptions: HTMLDivElement = document.createElement("div");
+            const deleteYes: HTMLButtonElement = document.createElement("button");
+            const deleteNo: HTMLButtonElement = document.createElement("button");
+
+            deletePopUp.className = "delete-element-container";
+            deletePopUp.id = "delete-element-container-id";
+            deleteTitle.className = "delete-element-heading";
+            deleteOptions.className = "delete-element-options";
+            deleteYes.className = "delete-element-yes";
+            deleteNo.className = "delete-element-no";
+                
+            deleteTitle.innerHTML = "Are you sure you wish to delete?"
+            deleteYes.innerHTML = "Yes";
+            deleteNo.innerHTML = "No";
+
+            root.appendChild(deletePopUp);
+            deletePopUp.appendChild(deleteTitle);
+            deletePopUp.appendChild(deleteOptions);
+            deleteOptions.appendChild(deleteYes);
+            deleteOptions.appendChild(deleteNo);
+
+            app.style.pointerEvents = "none";
+
+            deleteNo.addEventListener("click", () => {
+                deletePopUp.remove();
+                app.style.pointerEvents = "all";
+            });
+
+            deleteYes.addEventListener("click", async () => {
+                try {
+                    const response: Response = await fetch("http://localhost:8080/api/files/delete", {
+                        method: "POST",
+                        mode: "cors",
+                        credentials: "include",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${window.localStorage.getItem("jwt") as string}`
+                        },
+                        body: JSON.stringify(fileArray[i].id)
+                    });
+                    deletePopUp.remove();
+                    app.style.pointerEvents = "all";
+                } catch (e) {
+
+                }
+            });
+        });
     }
 }
 //actually we don't need this bottom function for now
