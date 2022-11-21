@@ -1,24 +1,6 @@
 import { Deadlines } from "../viewproject/deadlines/DeadlinesType";
-
-/*const CalendarEventListReq = async (url: string): Promise<void> => {
-    const response = await fetch(url, {
-        method: "GET",
-        mode: "cors",
-        credentials: "include",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${window.localStorage.getItem("jwt") as string}`
-        }
-    })
-
-    const readResponse = await response.json();
-    console.log(readResponse);
-}*/
-
 import { ProjectData } from "../viewproject/ProjectData";
 import { EventList } from "./CalendarTypes";
-
-//above function not being used
 
 const CalendarEventListReq = async (): Promise<EventList[]>  => {
     const projectData: ProjectData = JSON.parse(window.localStorage.getItem("projectData") as string);

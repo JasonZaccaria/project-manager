@@ -32,7 +32,7 @@ function Home() {
                         <h2 className="description-title">Have the power to schedule deadlines, stay organized, and create projects that you can share with those around you!</h2>
                     </section>
                     <section className="main-content">
-                        <img src={require("../assets/Capture.png")} className="home-img"></img>
+                        <img /*src={require("../assets/Capture.png")}*/src={require("../assets/showprojects.png")} className="home-img"></img>
                         <div className="description-right">
                             <p className="description-p">From your user page you can quickly create, manage, and update existing projects all with the touch of a button. Each project comes equipped with the ability to set up goals and deadlines that will keep you organized and up to date. Sign up below and see how easy it is to start managing projects today!</p>
                             <a href="/register" className="sign-up-button-link">
@@ -69,7 +69,7 @@ function Home() {
                         <h2 className="description-title">Have the power to schedule deadlines, stay organized, and create projects that you can share with those around you!</h2>
                     </section>
                     <section className="main-content">
-                        <img src={require("../assets/Capture.png")} className="home-img"></img>
+                        <img /*src={require("../assets/Capture.png")}*/ src={require("../assets/showprojects.png")} className="home-img"></img>
                         <div className="description-right">
                             <p className="description-p">From your user page you can quickly create, manage, and update existing projects all with the touch of a button. Each project comes equipped with the ability to set up goals and deadlines that will keep you organized and up to date. Sign up below and see how easy it is to start managing projects today!</p>
                             <a href="/register" className="sign-up-button-link">
@@ -89,7 +89,7 @@ function Home() {
                                 <button type='submit' className="sign-up-button" id="sign-up-button-id">Sign up</button>
                             </a>
                         </div>
-                        <img src={require("../assets/Capture.png")} className="home-img"></img>
+                        <img /*src={require("../assets/Capture.png")}*/ src={require("../assets/showworkflow.png")} className="home-img"></img>
                     </section>
                 </section>
             </div>

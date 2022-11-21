@@ -30,8 +30,8 @@ const Login = () => {
                         <h3 className="login-form-title">Login</h3>
                         <input type="text" id="login-email-input-id" placeholder="Email" ></input>
                         <input type="password" id="login-pass-input-id" placeholder="Password" ></input>
-                        <a href="/" className="login-link">
-                            <p className="login-question">Forgot password or email?</p>
+                        <a href="/register" className="login-link">
+                            <p className="login-question">Don't have an account yet?</p>
                         </a>
                         <button type="submit" id="login-submit-id">Submit</button>
                     </form>

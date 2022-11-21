@@ -1,13 +1,13 @@
 .calendar {
-    background-color: rgb(24, 24, 24);
+    background-image: url("../assets/testimage10.png");
     color: white;
 }
 
+.rbc-calendar {
+    background-color: rgb(24, 24, 24);
+}
+
 .calendar-container {
-    /*display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-auto-rows:auto;
-    grid-auto-flow: row;*/
     display: flex;
     width: 100%;
     height: 100vh;
@@ -17,7 +17,6 @@
     height: 10em;
     width: 100%;
     background-color: lightgray;
-    /*border:solid 1px black;*/
     outline: 1px;
     outline-color: red;
     outline-style: solid;
