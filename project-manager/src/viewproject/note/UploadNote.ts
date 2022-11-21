@@ -57,6 +57,7 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
         const showNoteElementTitle: HTMLElement = document.createElement("h3");
         const showNoteElementClose: HTMLElement = document.createElement("h3");
         const showNoteElementText: HTMLElement = document.createElement("p");
+        const showNoteElementDelete: HTMLElement = document.createElement("p");
 
         showNoteElement.className = "show-note-container";
         showNoteElementTop.className = "show-note-container-top";
@@ -65,15 +66,72 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
         showNoteElementClose.className = "show-note-container-close";
         showNoteElementClose.innerHTML = "X";
         showNoteElementText.innerHTML = lastNote.note;//notesArray[i].note;
+        showNoteElementDelete.className = "show-note-delete";
+        showNoteElementDelete.innerHTML = "X";
 
         root.appendChild(showNoteElement);
         showNoteElement.appendChild(showNoteElementTop);
         showNoteElementTop.appendChild(showNoteElementTitle);
         showNoteElementTop.appendChild(showNoteElementClose);
         showNoteElement.appendChild(showNoteElementText);
+        showNoteElement.appendChild(showNoteElementDelete);
 
         app.style.pointerEvents = "none";
 
+        showNoteElementDelete.addEventListener("click", () => {
+            const root: HTMLElement = document.getElementById("root") as HTMLElement;
+            const deletePopUp: HTMLDivElement = document.createElement("div");
+            const deleteTitle: HTMLHeadingElement = document.createElement("h3");
+            const deleteOptions: HTMLDivElement = document.createElement("div");
+            const deleteYes: HTMLButtonElement = document.createElement("button");
+            const deleteNo: HTMLButtonElement = document.createElement("button");
+
+            deletePopUp.className = "delete-element-container";
+            deletePopUp.id = "delete-element-container-id";
+            deleteTitle.className = "delete-element-heading";
+            deleteOptions.className = "delete-element-options";
+            deleteYes.className = "delete-element-yes";
+            deleteNo.className = "delete-element-no";
+            
+            deleteTitle.innerHTML = "Are you sure you wish to delete?"
+            deleteYes.innerHTML = "Yes";
+            deleteNo.innerHTML = "No";
+
+            root.appendChild(deletePopUp);
+            deletePopUp.appendChild(deleteTitle);
+            deletePopUp.appendChild(deleteOptions);
+            deleteOptions.appendChild(deleteYes);
+            deleteOptions.appendChild(deleteNo);
+
+            deleteNo.addEventListener("click", () => {
+                deletePopUp.remove();
+            })
+
+            deleteYes.addEventListener("click", async () => {
+                try {
+                const response: Response = await fetch("http://localhost:8080/api/notes/delete", {
+                    method: "POST",
+                    mode: "cors",
+                    credentials: "include",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${window.localStorage.getItem("jwt") as string}`
+                    },
+                    body: JSON.stringify(projectData.notes[sizeOfNotes].id),//sizeOfNotes),//notesArray[i].id),
+                });
+                const responseAwait: string = await response.text();
+                console.log(responseAwait);
+                //now we need to add logic here to test to delete our object asynchronously on the page
+                newNotesDataContainer.remove();
+                //newNoteRow.remove();    
+                showNoteElement.remove();
+                deletePopUp.remove();
+                app.style.pointerEvents = "none";
+                } catch (e) {
+                    console.log(e);
+                }
+            });
+        });
         showNoteElementClose.addEventListener("click", () => {
             showNoteElement.remove();
             app.style.pointerEvents = "all";
