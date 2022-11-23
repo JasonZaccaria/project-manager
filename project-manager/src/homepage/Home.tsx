@@ -52,7 +52,7 @@ function Home() {
                                 <button type='submit' className="sign-up-button" id="sign-up-button-id">Sign up</button>
                             </a>
                         </div>
-                        <img src={require("../assets/Capture.png")} className="home-img"></img>
+                        <img src={require("../assets/showworkflow.png")} className="home-img"></img>
                     </section>
                 </section>
             </div>
