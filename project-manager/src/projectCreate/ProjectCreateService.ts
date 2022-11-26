@@ -17,15 +17,11 @@ const ProjectCreator = async (url: string, e: SubmitEvent/*: FormEvent*/): Promi
         })
         const readResponse: ProjectCreateResponse = await response.json();
         if (readResponse.id) {
-            console.log("project successfully saved");
             return readResponse;
         } else {
-            console.log("error saving project");
             return false;
         }
     } catch (e) {
-        console.log(e);
-        console.log("error saving project");
         return false;
     }
 }

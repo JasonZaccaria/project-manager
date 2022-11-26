@@ -36,76 +36,9 @@
     color: rgb(100, 99, 99);
 }
 
-/*.hamburger-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 3em;
-    height: 3em;
-    background-color: blue;
-}
-
-.hamburger-line {
-    width: 3em;
-    height: .3em;
-    background-color: black;
-    margin: 0;
-    transition: all 0.2s ease-in-out;
-}
-
-.hamburger-line::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-color: red;
-    transform: translateY(-1em);
-    transition: all 0.2s ease-in-out;
-}
-
-.hamburger-line::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-color: green;
-    transform: translateY(.7em);
-    transition: all 0.2s ease-in-out;
-}
-
-.hamburger-line-transformed {
-    width: 0;
-    transform: translateX(-2.6em);
-    transition: all 0.2s ease-in-out;
-}
-
-.hamburger-line-transformed::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 1.2em;
-    width: 3em;
-    height: .3em;
-    transform: rotate(45deg);
-    transition: all 0.2s ease-in-out;
-}
-
-.hamburger-line-transformed::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -.5em;
-    width: 3em;
-    height: .3em;
-    transform:  rotate(-45deg);
-    transition: all 0.2s ease-in-out;
-}*/
-
 .hamburger-container {
     width: 3em;
     height: 3em;
-    /*background-color: white;*/
     display: flex;
     align-items: center;
 }
@@ -147,11 +80,9 @@
 }
 
 .hamburger-line-transformed {
-    /*opacity: 0;*/
     transition: all 0.2s ease-in-out;
     width: 0;
     height: .3em;
-    /*background-color: white;*/
     border-radius: 5px;
 }
 

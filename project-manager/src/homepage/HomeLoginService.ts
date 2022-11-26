@@ -4,7 +4,7 @@ const homeVerifyLogin = async (setLoggedIn: React.Dispatch<React.SetStateAction<
 
     try {
         if (window.localStorage.getItem("jwt") != null) {
-            const response = await fetch("http://localhost:8080/api/testlogin", {
+            const response = await fetch(process.env.REACT_APP_API_TEST_LOGIN as string, {
                 method: "GET",
                 mode: "cors",
                 credentials: "include",
@@ -16,19 +16,12 @@ const homeVerifyLogin = async (setLoggedIn: React.Dispatch<React.SetStateAction<
             const readResponse: ProtectedResponseType = await response.json();
             if (!readResponse.failure) {
                 return setLoggedIn(true);
-                //console.log("Hi testing logged in funcion if true");
-                //here we will conditionally load over the loggedin navbar feature
             } else {
                 return setLoggedIn(false);
-                //console.log("Hi testing logged in funcion if flase");
-                //here we will conditionally lod over the regular navbar
-
             }
         }
     } catch (e) {
         return setLoggedIn(false);
-        //console.log("Hi testing logged in funcion if failure");
-        //here we will conditionally load over the regular navbar
     }
 }
 

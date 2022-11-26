@@ -18,13 +18,11 @@ function Navbar(props: any) {
             slidingNavbar!.style.width = "60%";
             menuState(true);
             setCounter(counter+=1);
-            console.log(counter);
         } else {
             hamburgerLine?.classList.remove("hamburger-line-transformed");
             slidingNavbar!.style.width = "0";
             menuState(false);
             setCounter(counter+=1);
-            console.log(counter);
         }
     }
     return (

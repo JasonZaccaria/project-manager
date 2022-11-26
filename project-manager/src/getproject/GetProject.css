@@ -20,17 +20,12 @@
 }
 
 .getproject-create {
-    /*width: fit-content;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border-radius: 5px;*/
     width: 100%;
     height: 100%;
 }
 
 .project-area {
     display: grid;
-    /*grid-template-columns: repeat(auto-fit, 20em);*/
     grid-template-columns: repeat(auto-fit, minmax(20em, 30em));
     gap: 1em;
     justify-content:space-evenly;
@@ -41,9 +36,7 @@
     height: 15em;
     display: flex;
     flex-direction: column;
-    /*justify-content: center;*/
     align-items: center;
-    /*background-color: red;*/
     background-color: rgb(24,24,24);
     border-radius: 16px;
     color: lightgray;
@@ -62,13 +55,10 @@
 }
 
 .project-card {
-    /*max-width: 20em;*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    /*margin-left: 4%;
-    margin-right: 4%;*/
     margin-left: 2%;
     margin-right: 2%;
     margin-top: 1em;
@@ -124,7 +114,6 @@
 
 .create-project-title {
     text-align: center;
-    /*background-color: aqua;*/
     margin-left: 7.6em;
 }
 
@@ -132,7 +121,6 @@
     margin-right: 2em;
     font-weight: 1000;
     font-size: 2em;
-    /*background-color: yellow;*/
     cursor: pointer;
 }
 
@@ -147,7 +135,6 @@
     width: 20em;
     height: 2.5em;
     border-radius: 5px;
-    /*background-color: black;*/
     background-color: rgb(63, 63, 63);
     color: white;
 }

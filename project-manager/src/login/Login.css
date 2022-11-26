@@ -16,7 +16,6 @@
     flex-direction: column;
     border: solid 2px black;
     border-radius: 10px;
-    /*background-color: rgb(27, 27, 27);*/
     background-color: rgb(24, 24, 24);
     color: lightgray;
 }
@@ -35,7 +34,6 @@
 
 #login-email-input-id {
     border: none;
-    /*border-bottom: solid 2px lightgray;*/
     height: 2em;
     margin-left: 5%;
     margin-right: 5%;
@@ -46,7 +44,6 @@
 
 #login-pass-input-id {
     border: none;
-    /*border-bottom: solid 2px lightgray;*/
     height: 2em;
     margin-left: 5%;
     margin-right: 5%;

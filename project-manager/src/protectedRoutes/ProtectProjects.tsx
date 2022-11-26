@@ -7,12 +7,9 @@ const ProtectProjects = () => {
     useEffect(() => {
         verifyLogin(setLoggedIn);
     })
-    console.log(loggedIn);
     if (loggedIn) {
-        console.log(loggedIn);
         return <Outlet />
     } else {
-        console.log(loggedIn);
         return <Navigate to={"/"} />
     }
 }

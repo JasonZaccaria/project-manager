@@ -10,10 +10,8 @@ const ProtectLoginRegister = () => {
         verifyLogin(setLoggedIn);
     })
     if (loggedIn) {
-        console.log(loggedIn);
         return <Navigate to={"/"} />
     } else {
-        console.log(loggedIn);
         return <Outlet />
     }
 }

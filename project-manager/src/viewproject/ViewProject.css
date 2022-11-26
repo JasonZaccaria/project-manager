@@ -1,7 +1,6 @@
 .viewproject {
     display: flex;
     flex-direction: column;
-    /*background-color: yellow;*/
     background-image: url("../assets/testimage10.png");
     background-size: cover;
     gap: 1em;
@@ -22,14 +21,11 @@
 .project-view-notes {
     width: 30em;
     height: 30em;
-    /*background-color: black;*/
     background-color: rgb(24, 24, 24);
     display: flex;
     align-items: center;
     flex-direction: column;
     overflow: auto;
-    /*pointer-events: none;*/
-    /*pointer-events: all;*/
 }
 
 .project-view-notes-title {
@@ -46,7 +42,6 @@
 .note-items-title {
     color: white;
     margin: .3em;
-    /*background-color: red;*/
     cursor: pointer;
     margin-left: 5em;
 }
@@ -120,7 +115,6 @@
     text-decoration: none;
     color: white;
     margin: .3em;
-    /*margin-left: 4em;*/
 }
 
 .file-items-title:hover {
@@ -151,7 +145,6 @@
     height: 30em;
     flex-direction: column;
     align-items: center;
-    /*background-color: gray;*/
     background-color: rgb(24, 24, 24);
     border-radius: 16px;
 }
@@ -167,7 +160,6 @@
 }
 
 .show-note-container-title {
-    /*background-color: yellow;*/
     width: 56%;
     text-align: right;
     color: white;
@@ -177,7 +169,6 @@
     color: white;
     font-size:2em;
     cursor: pointer;
-    /*background-color: green;*/
     width: 10%;
 }
 
@@ -190,7 +181,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /*background-color: red;*/
 }
 
 .new-note-row:hover {
@@ -212,7 +202,6 @@
     display: flex;
     width: 100%;
     align-items: center;
-    /*justify-content: space-between;*/
     justify-content: space-evenly;
 }
 
@@ -223,7 +212,6 @@
 
 .new-file-date {
     color: white;
-    /*margin-right: 5em;*/
 }
 
 .new-file-delete {
@@ -270,7 +258,6 @@
 
 .project-create-deadlines {
     width: 30em;
-    /*height: 24.5em;*/
     height: 15em;
     background-color: rgb(24, 24, 24);
     color: white;
@@ -317,8 +304,6 @@
 .project-create-files {
     width: 30em;
     height: 10em;
-    /*width: 30em;*/
-    /*height: 24.5em;*/
     background-color: rgb(24, 24, 24);
     display: flex;
     flex-direction: column;
@@ -363,7 +348,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*background-color: black;*/
     justify-content: center;
 }
 
@@ -377,8 +361,6 @@
 .upload-notes-form {
     display: flex;
     flex-direction: column;
-    /*width: 40em;
-    height: 20em;*/
     width: 100%;
     background-color: rgb(24, 24, 24);
     justify-content: space-evenly;
@@ -390,10 +372,7 @@
 }
 
 .upload-notes-title-input {
-    /*width: 20em;*/
     width: 50%;
-    /*width: 30em;
-    height: 2em;*/
     margin-top: 1em;
     margin-bottom: 1em;
     background-color: rgb(63,63,63);
@@ -403,7 +382,6 @@
 }
 
 .upload-notes-body {
-    /*width: 100%;*/
     width: 90%;
     height: 20em;
     resize: none;
@@ -425,7 +403,6 @@
 
 @media screen and (max-width: 900px) {
     .upload-notes-form {
-        /*width: 30em;*/
         min-width: 10em;
     }
 }

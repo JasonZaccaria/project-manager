@@ -1,8 +1,6 @@
 .sliding-navbar {
-    /*background-color: rgb(177, 250, 206);*/
     background-color: rgb(56, 56, 56);
     color: white;
-    /*width: 60%;*/
     width: 0;
     height: 100%;
     position: fixed;

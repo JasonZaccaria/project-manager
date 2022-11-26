@@ -59,11 +59,9 @@ const GetProjects = async (url: string): Promise<GetProjectResponse | null> => {
             }
         })
         const readResponse: GetProjectResponse = await response.json();
-        console.log(readResponse);
         window.localStorage.setItem("projects", JSON.stringify(readResponse));
         return readResponse;
     } catch (e) {
-        console.log(e);
         return null;
    }
 }
@@ -113,8 +111,8 @@ const createProject = (e: FormEvent) => {
 
     createProjectForm.addEventListener("submit", async (e: SubmitEvent) => {
         try {
-            const projectReponse: ProjectCreateResponse = await ProjectCreator("http://localhost:8080/api/createproject", e) as ProjectCreateResponse;
-            const getProjectResponse: GetProjectResponse = await GetProjects("http://localhost:8080/api/projects") as GetProjectResponse;
+            const projectReponse: ProjectCreateResponse = await ProjectCreator((process.env.REACT_APP_API_CREATE_PROJECTS as string)/*"http://localhost:8080/api/createproject"*/, e) as ProjectCreateResponse;
+            const getProjectResponse: GetProjectResponse = await GetProjects((process.env.REACT_APP_API_GET_PROJECTS as string)/*"http://localhost:8080/api/projects"*/) as GetProjectResponse;
             const projectArea = document.getElementById("project-area-id");
             const projectArray: Project[] = getProjectResponse.projects;
             const projectArrayLength: number = projectArray.length;
@@ -143,23 +141,13 @@ const createProject = (e: FormEvent) => {
                 createProjectContainer.remove();
                 app.style.pointerEvents = "all";
 
-                //projectButton.addEventListener("click", () => navigateProjectFunc(projectButton, nav));
                 projectButton.addEventListener("click", () => {
-                    //window.history.pushState( "title","title", "http://localhost:3000/calendar");
                     window.location.replace(`/projectpage/?project=${currentProject.projectName}&id=${currentProject.id}`);
-                    //window.location.pathname = "/calendar";
-                    //window.location.reload();
                     
                 })
-
-
         } catch (exception) {
-            console.log("COULD NOT LOAD PROJECT");
         }
-        
     })
-
-    //below start adding logic to stop poniter actions on app and then delte objects on click of x button
 }
 
 export { GetProjects, projectRender, projectNavigator, createProject};

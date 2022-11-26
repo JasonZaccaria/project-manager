@@ -17,9 +17,7 @@
     flex-direction: column;
     border: solid 2px black;
     border-radius: 10px;
-    /*background-color: rgb(46, 46, 46);*/
     background-color: rgb(24, 24, 24);
-    /*opacity: .9;*/
 }
 
 .register-form {
@@ -36,7 +34,6 @@
 
 #email-input-id {
     border: none;
-    /*border-bottom: solid 2px lightgray;*/
     height: 2em;
     margin-left: 5%;
     margin-right: 5%;
@@ -46,7 +43,6 @@
 
 #pass-input-id {
     border: none;
-    /*border-bottom: solid 2px lightgray;*/
     height: 2em;
     margin-left: 5%;
     margin-right: 5%;

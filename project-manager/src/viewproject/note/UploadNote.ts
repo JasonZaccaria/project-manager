@@ -8,7 +8,7 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
     const noteName: string = (document.getElementById("note-name-input-id") as HTMLInputElement).value;
     const noteBody: string = (document.getElementById("note-input-id") as HTMLInputElement).value;
     const queryParams: URLSearchParams = new URLSearchParams(window.location.search);
-    const response: Response = await fetch("http://localhost:8080/api/notes/create", {
+    const response: Response = await fetch(process.env.REACT_APP_API_CREATE_NOTES as string, {
         method: "POST",
         mode: "cors",
         credentials: "include",
@@ -21,32 +21,24 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
     })
 
     const readResponse = await response.json();
-    console.log(readResponse);
 
     const projectData: ProjectData = await getProjectData() as ProjectData;
     const sizeOfNotes: number = projectData.notes.length -1;
     const lastNote: Notes = projectData.notes[sizeOfNotes];
-    console.log(projectData);
-    console.log(projectData.notes);
-    console.log(projectData.notes.length);
     const notesContainer: HTMLElement = document.getElementById("project-view-notes-id") as HTMLElement;
     const newNoteElement: HTMLElement = document.createElement("div");
-    /*changes start here*/
     const newNotesDataContainer: HTMLElement = document.createElement("div");
     const newNoteDateElement: HTMLElement = document.createElement("div");
-    /*changed end here*/
     newNoteElement.id = `note ${sizeOfNotes}`;
     newNoteElement.className = "note-items-title";
     newNoteElement.innerHTML = lastNote.noteName;
     newNoteDateElement.innerHTML = lastNote.date.toLocaleString().substring(0,10);
     newNotesDataContainer.className = "new-note-row";
     newNoteDateElement.className = "new-note-date";
-    //notesContainer.appendChild(newNoteElement);
     notesContainer.appendChild(newNotesDataContainer);
     newNotesDataContainer.appendChild(newNoteElement);
     newNotesDataContainer.appendChild(newNoteDateElement);
 
-    //changes start here!!! //was newnoteeleement
     newNotesDataContainer.addEventListener("click", () => {
             
         const root: HTMLElement = document.getElementById("root") as HTMLElement;
@@ -61,11 +53,11 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
 
         showNoteElement.className = "show-note-container";
         showNoteElementTop.className = "show-note-container-top";
-        showNoteElementTitle.innerHTML = lastNote.noteName;//notesArray[i].noteName;
+        showNoteElementTitle.innerHTML = lastNote.noteName;
         showNoteElementTitle.className = "show-note-container-title";
         showNoteElementClose.className = "show-note-container-close";
         showNoteElementClose.innerHTML = "X";
-        showNoteElementText.innerHTML = lastNote.note;//notesArray[i].note;
+        showNoteElementText.innerHTML = lastNote.note;
         showNoteElementDelete.className = "show-note-delete";
         showNoteElementDelete.innerHTML = "X";
 
@@ -109,7 +101,7 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
 
             deleteYes.addEventListener("click", async () => {
                 try {
-                const response: Response = await fetch("http://localhost:8080/api/notes/delete", {
+                const response: Response = await fetch(process.env.REACT_APP_API_DELETE_NOTES as string, {
                     method: "POST",
                     mode: "cors",
                     credentials: "include",
@@ -117,18 +109,14 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${window.localStorage.getItem("jwt") as string}`
                     },
-                    body: JSON.stringify(projectData.notes[sizeOfNotes].id),//sizeOfNotes),//notesArray[i].id),
+                    body: JSON.stringify(projectData.notes[sizeOfNotes].id),
                 });
                 const responseAwait: string = await response.text();
-                console.log(responseAwait);
-                //now we need to add logic here to test to delete our object asynchronously on the page
                 newNotesDataContainer.remove();
-                //newNoteRow.remove();    
                 showNoteElement.remove();
                 deletePopUp.remove();
                 app.style.pointerEvents = "none";
                 } catch (e) {
-                    console.log(e);
                 }
             });
         });
@@ -136,11 +124,7 @@ const UploadNote = async (e: FormEvent): Promise<void> => {
             showNoteElement.remove();
             app.style.pointerEvents = "all";
         })
-
     })
-    //changes end here
-
-
 }
 
 export { UploadNote };

@@ -26,7 +26,7 @@ const Register = () => {
             <div className="register-error-box" id="register-error-box-id">Incorrect Email or Password!</div>
             <section className="register-content">
                 <div className="register-container">
-                    <form className="register-form" onSubmit={(e) => {registerUser(`http://localhost:8080/api/register`, e, navigate)}}>
+                    <form className="register-form" onSubmit={(e) => {registerUser(process.env.REACT_APP_API_REGISTER as string, e, navigate)}}>
                         <h3 className="register-form-title">Register Account</h3>
                         <input type="text" id="email-input-id" placeholder="Email" ></input>
                         <input type="password" id="pass-input-id" placeholder="Password"></input>

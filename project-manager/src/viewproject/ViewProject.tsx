@@ -10,6 +10,7 @@ import { UploadNote } from "./note/UploadNote";
 import { UploadDeadlines } from "./deadlines/UploadDeadlines";
 import { showFiles, showNotes } from "./ShowData";
 import NavbarLoggedIn from "../navbar/NavbarLoggedIn";
+import SlidingNavbarLoggedIn from "../navbar/SlidingNavbarLoggedIn";
 
 const ViewProject = () => {
 
@@ -32,7 +33,7 @@ const ViewProject = () => {
 
     return (
         <div className="viewproject" onClick={() => {outOfBoundsClick(hamburger, setHamburger, count, setCount)}}>
-            <SlidingNavbar />
+            <SlidingNavbarLoggedIn />
             <header>
                 <NavbarLoggedIn hamburger={hamburger} setHamburger={setHamburger} count={count} setCount={setCount}/>
             </header>
@@ -55,7 +56,7 @@ const ViewProject = () => {
                     </div>
                     <div className="project-create-deadlines">
                         <h3 className="project-create-new-deadline">Create New Deadline</h3>
-                        <form className="project-create-deadline-form" onSubmit={(e) => UploadDeadlines("http://localhost:8080/api/deadlines/create", e)}>
+                        <form className="project-create-deadline-form" onSubmit={(e) => UploadDeadlines(process.env.REACT_APP_API_CREATE_DEADLINES as string, e)}>
                             <input type={"text"} placeholder="Title" className="project-create-deadlines-title" id="deadlines-note-input-id"></input>
                             <input type={"datetime-local"} className="project-create-deadlines-date" id="deadlines-input-id"></input>
                             <button type={"submit"} className="project-create-deadlines-button">Create</button>

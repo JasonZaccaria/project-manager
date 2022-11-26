@@ -8,7 +8,7 @@ import loginUser from "./LoginRequest";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-
+    console.log(process.env.REACT_APP_API_LOGIN as string);
     let [hamburger, setHamburger] = useState(false);
     let [count, setCount] = useState(0);
     let navigate = useNavigate();
@@ -26,7 +26,7 @@ const Login = () => {
             <div className="login-error-box" id="login-error-box-id">Incorrect Email or Password!</div>
             <section className="login-content">
                 <div className="login-container">
-                    <form className="login-form" onSubmit={(e) => {loginUser(`http://localhost:8080/api/login`, e, navigate)}} action="/">
+                    <form className="login-form" onSubmit={(e) => {loginUser(process.env.REACT_APP_API_LOGIN as string, e, navigate)}} action="/">
                         <h3 className="login-form-title">Login</h3>
                         <input type="text" id="login-email-input-id" placeholder="Email" ></input>
                         <input type="password" id="login-pass-input-id" placeholder="Password" ></input>

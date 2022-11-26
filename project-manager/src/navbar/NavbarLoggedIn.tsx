@@ -3,7 +3,6 @@ import "../navbar/Navbar.css";
 
 function NavbarLoggedIn(props: any) {
 
-    //below we will have define our states
     let hamburger = props.hamburger;
     let count = props.count;
     let setHamburger = props.setHamburger;
@@ -18,13 +17,11 @@ function NavbarLoggedIn(props: any) {
             slidingNavbar!.style.width = "60%";
             menuState(true);
             setCounter(counter+=1);
-            console.log(counter);
         } else {
             hamburgerLine?.classList.remove("hamburger-line-transformed");
             slidingNavbar!.style.width = "0";
             menuState(false);
             setCounter(counter+=1);
-            console.log(counter);
         }
     }
     return (

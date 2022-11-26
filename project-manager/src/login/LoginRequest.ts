@@ -18,36 +18,25 @@ const loginUser = async (url: string, e:FormEvent, nav: NavigateFunction): Promi
         })
         const readResponse: LoginResponse = await response.json();
         if (readResponse.jwt) {
-            console.log(readResponse);
             window.localStorage.setItem("jwt", readResponse.jwt);
             nav("/");
         } else {
-            console.log("could not retrieve user")
             const emailInput: HTMLInputElement = document.getElementById("login-email-input-id") as HTMLInputElement;
             const passwordInput: HTMLInputElement = document.getElementById("login-pass-input-id") as HTMLInputElement;
             const loginErrorBox: HTMLDivElement = document.getElementById("login-error-box-id") as HTMLDivElement;
 
-            emailInput.style.outline = "solid 2px red";
-            //emailInput.style.color = "red";
-        
+            emailInput.style.outline = "solid 2px red";        
             passwordInput.style.outline = "solid 2px red";
 
-            //passwordInput.style.color = "red";
             loginErrorBox.classList.add("login-error-box-show");
         }
     } catch (e) {
-        console.log(e);
-        console.log("error coudl not login user");
-        //perform error logic down here
         const emailInput: HTMLInputElement = document.getElementById("login-email-input-id") as HTMLInputElement;
         const passwordInput: HTMLInputElement = document.getElementById("login-pass-input-id") as HTMLInputElement;
         const loginErrorBox: HTMLDivElement = document.getElementById("login-error-box-id") as HTMLDivElement;
 
         emailInput.style.outline = "solid 2px red";
-        //emailInput.style.color = "red";
-        
         passwordInput.style.outline = "solid 2px red";
-        //passwordInput.style.color = "red";
 
         loginErrorBox.classList.add("login-error-box-show");
 

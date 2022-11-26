@@ -8,13 +8,11 @@
 }
 
 .description-sections {
-    /*width: fit-content;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
-    /*margin: auto;*/
     margin-left: 5%;
     margin-right: 5%;
     font-size: 1.0rem;
@@ -37,8 +35,6 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    /*background-color: rgb(195, 230, 187);*/
-    /*background-color: rgb(208, 245, 199);*/
     border-radius: 5px;
     border-width: 1px;
     padding-top: 1em;
@@ -68,6 +64,9 @@
     margin-left: 5%;
     margin-right: 5%;
     font-size: larger;
+    background-color: rgb(43, 36, 60);
+    text-align: center;
+    border-radius: 16px;
 }
 
 .description-left {
@@ -78,14 +77,15 @@
     margin-left: 5%;
     margin-right: 5%;
     font-size: larger;
+    background-color: rgb(43, 36, 60);
+    text-align: center;
+    border-radius: 16px;
 }
 
 .description-p {
     word-wrap: break-word;
     max-width: 25em;
     line-height: 2.5rem;
-    /*margin-left: 5%;
-    margin-right: 5%;*/
 }
 
 #main-content-id-2 {
@@ -97,6 +97,20 @@
 }
 
 .bottom {
-    /*background-color:rgb(208, 245, 199)*/
-    /*background-color: rgb(29, 29, 29);*/
+}
+
+@media screen and (max-width: 1099px) {
+
+    .description-right {
+        margin-top: 2em;
+    }
+
+    .sign-up-button-link {
+        margin-bottom: 1em;
+    }
+
+    .description-left {
+        margin-bottom: 2em;
+    }
+
 }

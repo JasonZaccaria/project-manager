@@ -5,9 +5,8 @@ import { ProjectData } from "./ProjectData";
 const showNotes = async (): Promise<void> => {
     const viewNotesContainer: HTMLElement = document.getElementById("project-view-notes-id") as HTMLElement;
     const projectData: ProjectData = JSON.parse(window.localStorage.getItem("projectData") as string);
-    console.log(projectData);
     const notesArray: Notes[] = projectData.notes;
-    console.log(notesArray);
+
     for (let i = 0; i < notesArray.length; i++) {
         const newNoteRow: HTMLElement = document.createElement("div");
         const newNote: HTMLElement = document.createElement("div");
@@ -23,7 +22,7 @@ const showNotes = async (): Promise<void> => {
         viewNotesContainer.appendChild(newNoteRow);
         newNoteRow.appendChild(newNote);
         newNoteRow.appendChild(newNoteDate);
-        //changes start here to addd a new opening note box to display the note asynchronously on screen!!!
+
         newNoteRow.addEventListener("click", () => {
             
             const root: HTMLElement = document.getElementById("root") as HTMLElement;
@@ -86,22 +85,8 @@ const showNotes = async (): Promise<void> => {
                 })
 
                 deleteYes.addEventListener("click", async () => {
-                    /*try {
-                        const deleteResponse = await fetch("http://localhost:8080/api/notes/delete", {
-                            method: "POST",
-                            mode: "cors",
-                            credentials: "include",
-                            headers: {
-                                "Content-Type": "application/json",
-                                "Authorization": `Bearer ${window.localStorage.getItem("jwt") as string}`
-                            },
-                            body: JSON.stringify({noteId: notesArray[i].id})
-                        })
-                        const getResponse = await deleteResponse.text();
-                        console.log(getResponse);
-                    }*/
                     try {
-                    const response: Response = await fetch("http://localhost:8080/api/notes/delete", {
+                    const response: Response = await fetch(process.env.REACT_APP_API_DELETE_NOTES as string, {
                         method: "POST",
                         mode: "cors",
                         credentials: "include",
@@ -112,14 +97,11 @@ const showNotes = async (): Promise<void> => {
                         body: JSON.stringify(notesArray[i].id)
                     })
                     const responseAwait: string = await response.text();
-                    console.log(responseAwait);
-                    //now we need to add logic here to test to delete our object asynchronously on the page
                     newNoteRow.remove();
                     showNoteElement.remove();
                     deletePopUp.remove();
                     app.style.pointerEvents = "none";
                     }catch (e) {
-                        console.log(e);
                     }
                 })
 
@@ -135,14 +117,12 @@ const showNotes = async (): Promise<void> => {
             })
 
         })
-        //changes end here
     }
 }
 
 const showFiles = async (): Promise<void> => {
     const viewFileContainer: HTMLElement = document.getElementById("project-view-files-id") as HTMLElement;
     const projectData: ProjectData = JSON.parse(window.localStorage.getItem("projectData") as string);
-    console.log(projectData);
     const fileArray: Files[] = projectData.files;
     for (let i = 0; i < fileArray.length; i++) {
         const newFileContainer: HTMLDivElement = document.createElement("div");
@@ -158,7 +138,7 @@ const showFiles = async (): Promise<void> => {
         newFileDate.innerHTML = fileArray[i].fileUploadDate.toLocaleString().substring(0,10);
         newFileDelete.innerHTML = "X";
         newFileDelete.className = "new-file-delete";
-        //viewFileContainer.appendChild(newFile);
+
         viewFileContainer.appendChild(newFileContainer);
         newFileContainer.appendChild(newFile);
         newFileContainer.appendChild(newFileDate);
@@ -199,7 +179,7 @@ const showFiles = async (): Promise<void> => {
 
             deleteYes.addEventListener("click", async () => {
                 try {
-                    const response: Response = await fetch("http://localhost:8080/api/files/delete", {
+                    const response: Response = await fetch(process.env.REACT_APP_API_DELETE_FILES as string, {
                         method: "POST",
                         mode: "cors",
                         credentials: "include",
@@ -217,10 +197,6 @@ const showFiles = async (): Promise<void> => {
             });
         });
     }
-}
-//actually we don't need this bottom function for now
-const showDeadlines = (): void => {
-    
 }
 
 export { showNotes, showFiles };
