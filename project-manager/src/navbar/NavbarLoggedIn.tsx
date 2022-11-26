@@ -8,7 +8,6 @@ function NavbarLoggedIn(props: any) {
     let setHamburger = props.setHamburger;
     let setCount = props.setCount;
 
-    //below we have our hamburger button function
     const onHamburgerClick = (menuState: React.Dispatch<React.SetStateAction<boolean>>, counter: number, setCounter: React.Dispatch<React.SetStateAction<number>>): void => {
         const hamburgerLine: HTMLElement | null = document.getElementById("hamburger-line-id");
         const slidingNavbar: HTMLElement | null = document.getElementById("sliding-navbar-id");

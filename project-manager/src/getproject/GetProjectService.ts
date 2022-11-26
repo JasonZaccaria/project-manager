@@ -111,8 +111,8 @@ const createProject = (e: FormEvent) => {
 
     createProjectForm.addEventListener("submit", async (e: SubmitEvent) => {
         try {
-            const projectReponse: ProjectCreateResponse = await ProjectCreator((process.env.REACT_APP_API_CREATE_PROJECTS as string)/*"http://localhost:8080/api/createproject"*/, e) as ProjectCreateResponse;
-            const getProjectResponse: GetProjectResponse = await GetProjects((process.env.REACT_APP_API_GET_PROJECTS as string)/*"http://localhost:8080/api/projects"*/) as GetProjectResponse;
+            const projectReponse: ProjectCreateResponse = await ProjectCreator((process.env.REACT_APP_API_CREATE_PROJECTS as string), e) as ProjectCreateResponse;
+            const getProjectResponse: GetProjectResponse = await GetProjects((process.env.REACT_APP_API_GET_PROJECTS as string)) as GetProjectResponse;
             const projectArea = document.getElementById("project-area-id");
             const projectArray: Project[] = getProjectResponse.projects;
             const projectArrayLength: number = projectArray.length;

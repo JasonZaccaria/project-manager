@@ -1,4 +1,3 @@
-import { Type } from "typescript";
 import { ProjectData } from "./ProjectData";
 
 const getProjectData = async (): Promise<ProjectData | Object> => {

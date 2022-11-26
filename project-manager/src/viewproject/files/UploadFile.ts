@@ -1,6 +1,3 @@
-import { FormEvent } from "react";
-import { fileURLToPath } from "url";
-
 const uploadFile = async (e: any) => {
     e.preventDefault();
     const fileData = new FormData();

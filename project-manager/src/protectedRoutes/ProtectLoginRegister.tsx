@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { ProtectedResponseType } from "./protectedResponseType";
 import { Navigate, Outlet } from "react-router-dom";
 import verifyLogin from "./VerifyLoginFunc";
 const ProtectLoginRegister = () => {

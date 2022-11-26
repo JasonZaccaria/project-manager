@@ -17,7 +17,6 @@
 }
 
 .navbar-links-container {
-    /*display: flex;*/
     display: none;
     justify-content: space-evenly;
     width: max-content;

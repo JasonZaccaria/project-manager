@@ -3,7 +3,7 @@ import { ProtectedResponseType } from "./protectedResponseType";
 const verifyLogin = async (setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>) => {
     try {
         if (window.localStorage.getItem("jwt") != null) {
-            const response = await fetch(process.env.REACT_APP_API_TEST_LOGIN as string/*http://localhost:8080/api/testlogin"*/, {
+            const response = await fetch(process.env.REACT_APP_API_TEST_LOGIN as string, {
                 method: "GET",
                 mode: "cors",
                 credentials: "include",

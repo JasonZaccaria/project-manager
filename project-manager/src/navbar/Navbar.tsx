@@ -3,13 +3,11 @@ import "../navbar/Navbar.css";
 
 function Navbar(props: any) {
 
-    //below we will have define our states
     let hamburger = props.hamburger;
     let count = props.count;
     let setHamburger = props.setHamburger;
     let setCount = props.setCount;
 
-    //below we have our hamburger button function
     const onHamburgerClick = (menuState: React.Dispatch<React.SetStateAction<boolean>>, counter: number, setCounter: React.Dispatch<React.SetStateAction<number>>): void => {
         const hamburgerLine: HTMLElement | null = document.getElementById("hamburger-line-id");
         const slidingNavbar: HTMLElement | null = document.getElementById("sliding-navbar-id");

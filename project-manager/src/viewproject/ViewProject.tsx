@@ -2,8 +2,6 @@ import "../viewproject/ViewProject.css";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { outOfBoundsClick, screenAdjuster } from "../navbar/NavbarActions";
-import Navbar from "../navbar/Navbar";
-import SlidingNavbar from "../navbar/SlidingNavbar";
 import { getProjectData } from "./GetProjectDataReq";
 import { uploadFile } from "./files/UploadFile";
 import { UploadNote } from "./note/UploadNote";

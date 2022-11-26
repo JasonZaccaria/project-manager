@@ -1,5 +1,4 @@
 import { FormEvent } from "react"
-import { DateLocalizer } from "react-big-calendar";
 
 const UploadDeadlines = async (url: string, e: FormEvent): Promise<void> => {
     e.preventDefault();
@@ -19,7 +18,6 @@ const UploadDeadlines = async (url: string, e: FormEvent): Promise<void> => {
     })
 
     const readResponse: any = await response.json();
-    console.log(readResponse);
 }
 
 export { UploadDeadlines };

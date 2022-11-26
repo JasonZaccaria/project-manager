@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
 import { outOfBoundsClick, screenAdjuster } from "../navbar/NavbarActions";
 import SlidingNavbar from "../navbar/SlidingNavbar";
-import { ProjectCreator } from "./ProjectCreateService";
 
 const ProjectCreate = () => {
 

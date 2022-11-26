@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
 import { ProjectCreateResponse } from "./ProjectCreateResponse";
 
-const ProjectCreator = async (url: string, e: SubmitEvent/*: FormEvent*/): Promise<ProjectCreateResponse | boolean> => {
+const ProjectCreator = async (url: string, e: SubmitEvent): Promise<ProjectCreateResponse | boolean> => {
     try {
         e.preventDefault();
         const projectName = (document.getElementById("project-name-input") as HTMLInputElement).value;
