@@ -26,7 +26,7 @@ function Navbar(props: any) {
     return (
         <div className="navbar">
             <a href="/" className='navbar-title-a'>
-                <h1 className="navbar-title">Title Of Project</h1>
+                <h1 className="navbar-title">MyProjectVision</h1>
             </a>
             <div className="navbar-links-container" id="hamburger-links-container-id">
                 <a href="/login" className="links">Login</a>
